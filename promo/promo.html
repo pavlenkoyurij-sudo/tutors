@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>тут ти зможеш додати своє оголошення про послуги репетитора в Україні</title>
+    <link rel="icon" type="image/png"href="../images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+    
+
+    <body>
+
+        <!--- блок навігації по сторінкам--->
+        <nav class="blog-nav">
+            <a href="../index.html" class="back-to-home-btn">🏠На головну</a>
+            
+        </nav>
+
+        <!---головна обгортка для статті, щоб можна було змінювати її стилі --->
+        <main class="promo-container">
+            <h1 class="promo-title">👋 Вітаю! Додайте свою картку репетитора. Це безкоштовно і займе лише кілька хвилин.<small><br>📅 Ваше оголошення буде розміщена на сайті протягом 365 днів.</small></h1>
+
+                <!-- Нова обгортка для Юлі та форми -->
+                <div class="promo-content">
+                    
+                    <!-- Юля ЗЛІВА -->
+                    <div id="yulya">
+                        <img src="promo.png" id="yulya-img" alt="Помічниця Юля">
+                    </div>
+
+                    
+            
+
+
+            
+                    <!-- Форма СПРАВА -->
+                    <div class="application-container">
+                        <form id="applicationForm" class="application-form">
+
+                            <input type="text" id="tutorCity" placeholder="📍Введіть ваше місто" required>
+                            
+                            <input type="text" id="tutorName" placeholder="👤 Ваше ім'я">
+                            
+                                <select id="tutorCategory">
+                                <option value="">Оберіть напрямок</option>
+                                <option value="ukrainian">Українська мова</option>
+                                <option value="ukrainianLiterature">Українська література</option>
+                                <option value="english">Англійська мова</option>
+                                <option value="german">Німецька мова</option>
+                                <option value="polish">Польська мова</option>
+                                <option value="french">Французька мова</option>
+                                
+                                <option value="mathematics">Математика</option>
+                                <option value="physics">Фізика</option>
+                                <option value="chemistry">Хімія</option>
+                                <option value="biology">Біологія</option>
+                                <option value="geography">Географія</option>
+                                <option value="history">Історія</option>
+                                <option value="informatics">Інформатика</option>
+                                <option value="painting">Малювання</option>
+                                <option value="music">Музика</option>
+                                <option value="others">Інше</option>
+                                
+                            </select>
+
+                            <div class="lesson-format">
+                                <p>💻 Формат занять</p>
+                                <label>
+                                    <input type="checkbox" id="tutorOnline">
+                                        💻 Онлайн
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" id="tutorVisitStudent">
+                                        🚗 Виїзд до учня
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" id="tutorAtHome">
+                                        🏠 У репетитора
+                                </label>
+                            </div>
+                            
+                            <input
+                                type="tel"
+                                id="tutorPhone"
+                                placeholder="📞 Ваш телефон:+380000000005"
+                                pattern="\+380[0-9]{9}"
+                                required>
+                            
+                            <input
+                                type="number"
+                                id="tutorExperience"
+                                min="1"
+                                max="60"
+                                placeholder="Досвід роботи, років:"
+                                required>
+                            
+                            
+                            <textarea id="tutorDescription" placeholder="📝 Опис послуги"></textarea>
+                            <input type="file" id="tutorPhoto" accept="image/*">
+                            
+
+                            <button 
+                            type="button" 
+                            onclick="console.log('Кнопку додавання анкети натиснуто'); registerTutor()" class="register-tutor-btn">
+                                ✔️Зберегти
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+            
+
+
+            
+
+        </main>
+
+
+        
+
+        
+
+         <!--посилання до супербази-->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+            
+        <script>
+            const supabaseUrl = "https://kvnivreuwjgxqekaswed.supabase.co";
+            const supabaseKey = "sb_publishable_lFliydUt3DSoAuntl79FdA_zHUVZpga";
+
+            const supabaseClient = window.supabase.createClient(
+                supabaseUrl,
+                supabaseKey
+            );
+
+
+            //Функція запису користувацьких даних
+            async function registerTutor() {
+
+                console.log('функція запустиася'); // Додано для відстеження виклику функції
+
+
+                
+                const tutorName = document.getElementById('tutorName').value;
+                const tutorCity = document.getElementById('tutorCity').value;
+                const tutorCategory = document.getElementById('tutorCategory').value;
+               
+                const tutorPhone = document.getElementById('tutorPhone').value;
+                const tutorExperience = document.getElementById('tutorExperience').value;
+                const tutorOnline = document.getElementById('tutorOnline').checked;
+                const tutorAtHome = document.getElementById('tutorAtHome').checked;
+                const tutorVisitStudent = document.getElementById('tutorVisitStudent').checked;
+                const tutorDescription = document.getElementById('tutorDescription').value;
+                const photoFile = document.getElementById('tutorPhoto').files[0];
+                if (photoFile && photoFile.size > 2 * 1024 * 1024) {
+                    alert("❌ Фото має бути не більше 2 МБ");
+                    return;
+                }
+
+                 if (!tutorName || !tutorCity || !tutorCategory || !tutorPhone || !tutorDescription) {
+                    alert('❌ Будь ласка, заповніть всі обов\'язкові поля перед відправкою анкети.'); 
+                    return; // Зупиняємо виконання функції, якщо обов'язкові поля не заповнені
+                } 
+
+                if (!tutorOnline && !tutorAtHome && !tutorVisitStudent) {
+                        alert('❌ Оберіть хоча б один формат занять.');
+                        return;
+                    
+                }
+
+
+                let photoUrl = "";
+                if (photoFile) {
+                    const fileName = Date.now() + "_" + photoFile.name;
+
+                    const { error: uploadError } = await supabaseClient.storage
+                        .from("tutor-photos")
+                        .upload(fileName, photoFile)
+
+                    if (uploadError) {
+                        alert("❌ Не вдалося завантажити фото!");
+                        console.error(uploadError);
+                        return;
+                    }
+
+                    const { data } = supabaseClient.storage
+                        .from("tutor-photos")
+                        .getPublicUrl(fileName);
+                    photoUrl = data.publicUrl
+                }
+
+
+
+
+               
+                
+
+                const { error } = await supabaseClient
+                    .from('tutors')
+                    .insert([
+                        {
+                            
+                            name: tutorName,
+                            city: tutorCity,
+                            category: tutorCategory,
+                            phone: tutorPhone,
+                            experience: tutorExperience,
+                            online: tutorOnline,
+                            at_home: tutorAtHome,
+                            visit_student: tutorVisitStudent,
+                            description: tutorDescription,
+                            photo: photoUrl,
+                            approved: false // Додати поле approved зі значенням false
+                        }
+                    ]);
+                if (error) {
+                    console.error('Помилка при додаванні анкети:', error);
+                    console.log('tutorCategory =', tutorCategory); // Додано для відстеження помилки
+                       
+
+                } else {
+                    alert('🎉Дякуємо! Вашу картку успішно отримано!\n\nПісля перевірки вона з\'явиться в каталозі репетиторів');
+                    document.getElementById('applicationForm').reset();
+                    
+                }
+            }
+            
+
+         </script>           
+        
+            
+        
+
+
+        
+
+    </body>
+</html>

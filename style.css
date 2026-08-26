@@ -1,0 +1,751 @@
+
+body {
+    background-image: url("images/background-image.jpeg");
+    background-size: cover;/*розтягуємо картинку на весь екран*/
+    background-position: center;/*центруємо картинку по вертикалі і горизонталі*/
+    background-attachment: fixed;/*фіксуємо артинку на місці, щоб не рухався зі скроломк*/
+    background-color: #2c2c2c;/*фон бекграунду поки завантажується картинка*/
+    margin: 0;/*занулюємо стандартні відступик*/
+    padding: 0;/*занулюємо стандартні відступик*/
+}
+
+
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+    position: relative;
+}
+        /*затемнюючий фон шрифта заголовка*/
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.65);
+    z-index: 1;
+}
+
+.hero >*{
+    position: relative;
+    z-index: 2;
+    color: #2b2b2b;
+}
+
+.hero a {
+    font-size: 26px;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    background: #1e3a8a;
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+
+}
+
+.hero a:hover {
+    background: #5e24c2;
+    transform: translateY(-2px);
+}
+
+    /*заголовок хіро*/
+.hero h1 {
+    font-size: 48px;
+}
+
+    /*підзаголовок*/
+.hero p {
+    font-size: 22px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
+
+
+
+
+
+.advantages-title {
+    color: black;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    font-size: 28px;
+    margin-top: 40px;
+    text-align: center;/*центрує заголовок*/
+
+}
+
+    /*розміщення карток  - чому нас обирають*/
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 30px auto;/*ставимо автоматичні відступи по боках*/
+}
+
+    /*стилі карток  - чому нас обирають*/
+.adv-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.adv-card:hover {
+    transform: translateY(-5px);
+}
+
+    /*===ФУТЕР===*/
+footer {
+    font-size: 18px;
+    background: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+    /*кнопка - прокрутка догори*/
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 50%;
+    background: #1e3a8a;
+    color: white;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+} 
+
+#scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollToTopBtn:hover {
+    transform: scale(1.1);
+}
+
+    /*секція майстрів*/
+.tutors-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.tutors-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+        /*кнопки фільтрів*/
+.filters button {
+    border: none;
+    border-radius: 5px;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+    .filters button:hover {
+        background: #5e24c2;
+        transform: translateY(-2px);
+    }
+
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+
+    .tutor-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+        /*картки майстрів*/
+    .tutor-card {
+        font-size: 18px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        transition: 0.3s;
+        text-align: left;
+    }
+
+    .tutor-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #555;
+        font-size: 0.9rem;
+    }
+
+    .tutor-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+
+
+    .tutor-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .tutor-card h3 {
+        margin-bottom: 10px;
+    }
+
+    
+
+    .tutor-selection {
+        font-size: 28px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+        /*плавний скрол*/
+    html {
+        scroll-behavior: smooth;
+    }
+
+        /*кнопки фільтру*/
+    .call-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        background: #1e3a8a;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .call-btn:hover {
+        background: #5e24c2;
+    }
+
+    .tutor-card:hover {
+        transform: translateY(-5px);
+        transition: 0.3s;
+    }
+
+    .tutor-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .rating {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .city-filter {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+
+    
+    .city-filter button:hover {
+        background-color: #5e24c2;
+        transform: scale(1.05);
+    }
+
+    #citySearch,
+    .city-filter button {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    #citySearch:hover {
+        background-color: rgba(0,0,0,0.2);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+
+
+    .join-section {
+        padding: 60px 20px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    
+         /*кнопка додатипайстра*/
+    .add-tutor-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+        padding: 14px 24px;
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .whatsapp-btn {
+        background: #1e3a8a;
+    }
+
+    .whatsapp-btn:hover {
+        background: #5e24c2;
+    }
+      
+
+
+
+
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .join-list {
+        display: inline-block;
+        text-align: left;
+        line-height: 1.8;
+    }
+
+        /*кнопка фаворитів - в обраному стані*/
+    .favorite-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+        /*кнопка фаворитів - не в обраному стані*/
+    .favorite-btn {
+        background: #444;
+        color: white;
+    }
+
+    .favorite-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+
+        /*поведінка кнопки при наведені курсору : кнопка фаворитів - в обраному стані*/
+    .favorite-btn.active {
+        background: #ff6600;
+        color: white;
+    }
+
+    
+
+    .seo-text {
+        text-align: center;
+        line-height: 1.8;
+        max-width: 800px;
+        padding: 60px 20px;
+        margin: 0 auto;
+        color: #444;
+    }
+
+    .seo-text h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+
+    .seo-text p {
+        font-size: 18px;
+    }
+
+                /*--- стилі блоку відгуків ---*/
+
+         /*--- головна секція: центруємо тект, додаємо відступи ---*/
+    .reviews-section {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: rgba(255,255,255,0.65);
+        backdrop-filter: blur(1px);
+
+    }
+
+        /*--- підзаголовок ---*/
+    .reviews-subtitle {
+        color: #141313;
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+        /*--- контейнен(флекс-бокс) ---*/
+    .reviews-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto 40px;
+    }
+
+      /*--- сама картка відгуку ---*/
+    .review-card {
+        background-color: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 16px;
+        padding: 20px;
+        
+        width: 100%;
+        max-width: 450px;
+        text-align: left;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+            /*--- верхня частина картки ---*/
+    .review-heder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        font-weight: bold;
+    }
+
+    .review-autor {
+        color: #334;
+        font-size: 16px;
+    }
+
+
+    .review-stars {
+        color: #ffcc00;/*--- золотий колір зірочок ---*/
+        font-size: 14px;
+    }
+
+    .review-data {
+        color: #998;
+        font-size: 12px;
+        align-self: flex-end;
+    }
+
+    .review-text {
+        color: #181818;
+        font-size: 15px;
+        line-height: 1.6;/*--- збільшуємо відстант між рядками, щоб легче читалося ---*/
+        font-style: italic;/*--- робимо текст курсивом бо пряма мова відгуку ---*/
+        margin-bottom: 15px;
+    }
+
+
+        /*--- кнопка залишити відгук ---*/
+    .leave-review-btn {
+        display: inline-block;
+        padding: 14px 28px;
+        background-color: #25d366;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        text-decoration: none;/*--- прибираєма стандартне підкреслення посилання ---*/
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(102, 116, 107, 0.3);/*--- тінь кнопки ---*/
+        transition: all 0.2s ease;
+    }
+
+    .leave-review-btn:hover {
+        background-color: #20ba56;
+        transform: rotateY(-2px);
+        box-shadow: 0 6px 20px rgba(48, 53, 49, 0.4);/*--- тінь стає глибшою ---*/
+    }
+
+        /*--- ефект при кліку ---*/
+    .leave-review-btn:active {
+        transform: translateY(-2px);        
+    }
+
+
+
+        
+
+
+     /*--- плавний перехід від сторінки до сторінки ---*/
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .premium-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 18px;
+        background: linear-gradient(135deg, #f7c948, #ff9800);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .premium-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }    
+
+    /* Базові налаштування для шапки */
+    header {
+        display: flex;
+        justify-content: space-between; /* Розносить заголовок вліво, меню вправо */
+        align-items: center;
+        padding: 15px 40px;
+        position: sticky; /* Шапка плавно залишається вгорі при скролі */
+        top: 0;
+        z-index: 1000;
+        
+        /* М'який ефект скла, який не перетягує увагу */
+        background: rgba(255, 255, 255, 0.85); 
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        
+        /* Тонка акуратна лінія знизу замість грубої тіні */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06); 
+        transition: all 0.3s ease;
+    }
+
+    /* Назва сайту в шапці */
+    header h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #2c3e50; /* Спокійний темно-синій/сірий колір замість чисто чорного */
+        margin: 0;
+        letter-spacing: -0.5px;
+    }
+
+    /* Контейнер для посилань */
+    header nav {
+        display: flex;
+        gap: 20px; /* Відступи між посиланнями, щоб код дихав */
+        align-items: center;
+    }
+
+    /* Стилі для звичайних посилань */
+    header nav a {
+        text-decoration: none;
+        color: #555; /* М'який колір для другорядних елементів */
+        font-size: 0.95rem;
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 6px;
+        transition: all 0.25s ease;
+    }
+
+    /* Ефект наведення на звичайні посилання */
+    header nav a:hover {
+        color: #2c3e50;
+        background: rgba(0, 0, 0, 0.04); /* Легке підсвічування фону */
+    }
+
+    /* Хак для важливих кнопок: виділяємо "Нікополь" та "Зв'язатися" */
+    /* Посилання на Нікополь робимо трохи акцентним, але спокійним */
+    header nav a[href*="nikopol"] {
+        background: rgba(243, 156, 18, 0.1); /* Легкий натяк на твій фірмовий теплий колір */
+        color: #20ba56;
+        font-weight: 600;
+    }
+
+    header nav a[href*="nikopol"]:hover {
+        background: rgba(243, 156, 18, 0.18);
+        color: #20ba56;
+    }
+
+    /* Кнопка "Зв'язатися" (mailto) — робимо акуратною контурною кнопочкою */
+    header nav a[href^="mailto:"] {
+        border: 1px solid #f39c12;
+        color: #f39c12;
+        font-weight: 600;
+    }
+
+    header nav a[href^="mailto:"]:hover {
+        background: #f39c12;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(243, 156, 18, 0.2);
+    }
+
+    /* Адаптивність: якщо екран маленький (телефон), переносимо меню під заголовок */
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            gap: 12px;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        
+        header nav {
+            flex-wrap: wrap; /* Дозволяє посиланням переноситися на новий рядок на смартфонах */
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        header nav a {
+            font-size: 0.85rem;
+            padding: 5px 10px;
+        }
+    }
+
+ 
+    /* стилі футера */
+    footer a{
+        color: white;
+        text-decoration: none;
+    }
+
+    footer a:hover{
+        color: orange;
+    }
+
+    /* Стиль для помаранчевої кнопки в навігації */
+    .nav-btn-highlight {
+        background-color: #1e3a8a; /* Помаранчевий колір */
+        color: #ffffff !important;   /* Білий текст */
+        padding: 8px 16px;
+        border-radius: 20px;       /* Закруглення як у банера */
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.2s ease;
+    }
+
+    /* Ефект при наведенні курсору */
+    .nav-btn-highlight:hover {
+        background-color: #5e24c2; /* Трохи темніший при наведенні */
+        box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+        transform: translateY(-1px);
+    }
+
+    
+
+    
+
+    
+
+     /* Модальне вікно */
+    .tutor-modal {
+        border: none;
+        border-radius: 16px;
+        padding: 25px;
+        width: 90%;
+        max-width: 550px;
+        max-height: 85vh; /* Якщо текст великий, вікно не вийде за межі екрана */
+        overflow-y: auto; /* Вмикає скрол усередині вікна */
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Затемнення та розмиття фону */
+    .tutor-modal::backdrop {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+    }
+
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-close-icon {
+        position: absolute;
+        top: -10px;
+        right: -5px;
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: #666;
+    }
+
+    .modal-photo {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+
+    .modal-desc {
+        white-space: pre-line; /* Зберігає абзаци та переноси рядків */
+        line-height: 1.5;
+        font-size: 1.05rem;
+        color: #333;
+    }
+
+    /* Обрізаємо опис у картці до 3 рядків, щоб усі картки були рівними */
+    .tutor-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Курсор-вказівник для картки, щоб юзер розумів, що на неї можна натиснути */
+    .tutor-card {
+        cursor: pointer;
+    }
+
+    #modalCallBtn {
+        align-self: center; /* Вирівнює саме кнопку по центру, не розтягуючи */
+        width: fit-content;  /* Ширина суворо під розмір тексту та іконки */
+        padding: 10px 25px; /* Зручні відступи для натискання */
+    }
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+

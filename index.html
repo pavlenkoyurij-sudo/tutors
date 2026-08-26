@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+        <!--СЕО ОПИС - МЕГА ВАЖЛИВО-->
+    <meta name="description"
+    content="Каталог репетиторів та викладачів: шкільна програма.">
+    
+    <title>Репетитори | Шкільна програма</title>
+
+    <!--відсилка до стилів-->
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!--<link rel="canonical" href="https://" />-->
+
+
+</head>
+
+
+
+
+<body>
+
+    <header>
+        <h2>Репетитори та викладачі: шкільна програма</h2>
+        <nav>
+                <a href="#home">Головна</a>
+                <a href="#tutors">Викладачі</a>
+                
+                <a href="#join-tutor-section">Контакти</a>
+                <a href="promo/promo.html" class="nav-btn-highlight">Стати репетитором</a>
+                
+                
+                
+                
+        </nav>
+            
+
+    </header>
+
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <h1>
+                🖋️ Ваші знання в наших руках
+            </h1>
+
+           
+
+            <a href="#tutors" class="hero-btn">
+                 Підібрати викладача🚀
+            </a>
+
+            
+
+        </section>    
+        
+
+
+
+
+        <section class="advantages-section">
+
+             <h2 class="advantages-title">
+                Чому нас обирають?
+            </h2>
+
+            <div class="advantages">
+                <div class="adv-card">
+                    <div class="adv-icon">📋</div>
+
+                    <p>
+                        Максимум інформації на одному ресурсі
+                    </p>
+                    <p>
+                        <small>Усі викладачі та репетитори зібрані в одному каталозі
+                            для вашої зручності
+                        </small>
+                    </p>
+
+            </div>   
+                
+                <div class="adv-card">
+                    <div class="adv-icon">🛡️</div>
+
+                    <p>
+                        Тільки актуальні анкети викладачів
+                    </p>
+
+                    <p>
+                        <small>Ми слідкуємо за відгуками для найкращого результату
+                        </small>
+                    </p>
+                </div>
+
+                <div class="adv-card">
+                    <div class="adv-icon">🗂️</div>
+
+                    <p>
+                        Зручний каталог викладачів
+                    </p>
+                    <p>
+                        <small>Знайдіть викладача за предметом, містом та іншими критеріями
+                        </small>
+                    </p>    
+                </div>
+
+                <div class="adv-card">
+                    <div class="adv-icon">⚡</div>
+
+                    <p>
+                        Швидкий пошук фахівця
+                    </p>
+                    <small>Широкий вибір спеціалістів з різних предметів і напрямків
+                    </small>
+
+                </div>   
+            
+            </div>
+        </section>
+
+
+       
+
+
+
+        <section id="tutors" class="tutors-section">
+            <h2>Наші спеціалісти</h2>
+            <div class="city-filter">
+
+                <input
+                    type="text"
+                    id="citySearch"
+                    placeholder="🔎 Введіть місто..."
+                    autocomplete="off"
+                >
+
+                <div class="filters" class="filterCity">
+                    <button onclick="filterCity('all')">Всі міста</button>
+                </div>    
+            </div>
+
+
+
+
+
+            <div class="filters">
+                <button onclick="filterTutors('all')">Всі</button>
+                <button onclick="filterTutors('ukrainian')">Українська мова</button>
+                <button onclick="filterTutors('ukrainianLiterature')">Українська література</button>
+                <button onclick="filterTutors('english')">Англійська мова</button>
+                <button onclick="filterTutors('german')">Німецька мова</button>
+                <button onclick="filterTutors('polish')">Польська мова</button>
+                <button onclick="filterTutors('french')">Французька мова</button>
+                <button onclick="filterTutors('mathematics')">Математика</button>
+                <button onclick="filterTutors('physics')">Фізика</button>
+                <button onclick="filterTutors('chemistry')">Хімія</button>
+                <button onclick="filterTutors('biology')">Біологія</button>
+                <button onclick="filterTutors('geography')">Географія</button>
+                <button onclick="filterTutors('history')">Історія</button>
+                <button onclick="filterTutors('informatics')">Інформатика</button>
+                <button onclick="filterTutors('painting')">Малювання</button>
+                <button onclick="filterTutors('music')">Музика</button>
+                <button onclick="filterTutors('others')">Інше</button>
+                
+                
+
+
+            </div>
+
+
+            <div class="tutor-grid" id="tutorGrid"></div> <!--відсилка до масиву майстрів в ява скрипт-->
+
+
+        
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+        
+
+        
+
+
+
+        
+
+
+        <section class="seo-text">
+            <h2>
+                Каталог репетиторів та викладачів України: шкільна програма.
+            </h2>
+
+            <p>
+                На нашому сайті ви можете знайти викладачів різних дисциплін Шкільних та НМТ предметів з української мови
+                української літератури, англійської мови, німецької мови, польської мови, французької мови, математики, фізики, хімії, біології, географії, історії україни, інформатики.
+                Ми поступово поповнюємо каталог новими перевіреними викладачами та репетиторами.
+            </p>
+           
+            <p>
+                Каталог репетиторів та викладачів — це сучасний сервіс, де репетитор, за бажанням, отримує власну вебсторінку з описом послуг, фотографіями і контактною інформацією. Це допомагає учням зробити більш усвідомлений вибір, а репетиторам — знайти нових учнів.
+            </p>    
+        
+        </section>
+
+
+
+        <section class="reviews-section">
+            <h2>💬 Відгуки наших користувачів</h2>
+            <p class="reviews-subtitle">
+                Ми слідкуємо за відгуками користувачів каталогу.
+            </p>
+
+            <div class="reviews-container">
+
+                <div class="review-card">
+                    
+                </div>
+
+               
+            </div>
+            <div class="review-action">
+                <a href="https://wa.me/380957996024?text=%D0%94%D0%BE%D0%B1%D1%80%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BB%D0%B8%D1%88%D0%B8%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B3%D1%83%D0%BA."
+                class="leave-review-btn">
+                ✍️ Залишити відгук через WhatsApp
+                </a>
+            </div>
+
+        </section>
+
+
+       
+
+
+
+
+        <section class="join-section" id="join-tutor-section">
+            <h2>Ви викладач?</h2>
+
+            <p>
+                Якщо ви викладач і бажаєте, щоб більше учнів дізналися про ваші освітні послуги, зв'яжіться з нами!
+            </p>
+
+            <a href="promo/promo.html"
+                class="add-tutor-btn whatsapp-btn">
+                🖋️ Заповнити анкету репетитора
+            </a>
+
+
+
+            
+
+
+
+            <p>
+                Ми безкоштовно додамо ваше оголошення до каталогу.
+            </p>
+            
+
+            <p class="join-note">
+                ⏱️ Додавання анкети займає лише хвилину.
+            </p>
+        </section>
+
+
+
+        
+
+        
+
+    </main>    
+
+
+    
+    
+    
+
+    
+
+
+
+    <button id="scrollToTopBtn" aria-label="Наверх">
+            ▲
+        </button> <!--кнопка наверх-->
+
+
+
+
+
+
+    <footer id="contacts"> 
+        <h2>Репетитори та викладачі: шкільна програма</h2>
+
+         
+        <p>
+            <a href=""
+                target="_blank"
+                rel="noopener noreferrer">
+                📘Наш Facebook
+            </a>
+        </p>  
+
+        <p>
+            <a href="mailto:yurij.webdev@gmail.com" title="Написати нам">
+                📧E-mail
+            </a>
+        </p>
+
+            <p>📍Харків, Україна</p>
+
+            <p>© Репетитори та викладачі нашої країни 2026</p>
+
+            <p><small style="color: #ff8533;">Правила публікації матеріалів:</small></p>
+            <p><small style="color: #ff8533;">Ми поважаємо авторські права та права інших людей. Якщо будь-який матеріал на сайті порушує ваші права, <br>повідомте нас через контакти, і ми оперативно його перевіримо та, за потреби, виправимо або видалимо. T:+380957996024</small></p>
+
+
+
+    </footer>
+
+
+     <!-- Універсальне модальне вікно для детального опису -->
+    <dialog id="tutorModal" class="tutorr-modal">
+        <div class="modal-content">
+            <button class="modal-close-icon" onclick="closeTutorModal()">&times;</button>
+            <img id="modalPhoto" src="" alt="" class="modal-photo">
+            <h3 id="modalName"></h3>
+            <p id="modalProfession" class="modal-prof"></p>
+            <p id="modalCity" class="modal-city"></p>
+            <hr>
+            <h4>Повний опис послуг:</h4>
+            <p id="modalDescription" class="modal-desc"></p>
+            <hr>
+            <a id="modalCallBtn" href="" class="call-btn">📞 Подзвонити</a>
+        </div>
+    </dialog>
+
+        <!--посилання до супербази-->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <!--посилання до ява скрипта-->
+    <script src="script.js"></script> 
+
+
+        
+
+
+</body>
+</html>
