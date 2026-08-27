@@ -1,4 +1,5 @@
 
+
 body {
     background-image: url("images/background-image.jpeg");
     background-size: cover;/*розтягуємо картинку на весь екран*/
@@ -47,7 +48,7 @@ body {
 }
 
 .hero a:hover {
-    background: #5e24c2;
+    background: #3773f5;
     transform: translateY(-2px);
 }
 
@@ -162,7 +163,7 @@ footer {
 }
 
     .filters button:hover {
-        background: #5e24c2;
+        background: #88abf6;
         transform: translateY(-2px);
     }
 
@@ -243,7 +244,7 @@ footer {
         transition: 0.3s;
     }
     .call-btn:hover {
-        background: #5e24c2;
+        background: #3773f5;
     }
 
     .tutor-card:hover {
@@ -275,7 +276,7 @@ footer {
 
     
     .city-filter button:hover {
-        background-color: #5e24c2;
+        background-color: #88abf6;
         transform: scale(1.05);
     }
 
@@ -325,7 +326,7 @@ footer {
     }
 
     .whatsapp-btn:hover {
-        background: #5e24c2;
+        background: #3773f5;
     }
       
 
@@ -651,7 +652,7 @@ footer {
 
     /* Ефект при наведенні курсору */
     .nav-btn-highlight:hover {
-        background-color: #5e24c2; /* Трохи темніший при наведенні */
+        background-color: #3773f5; /* Трохи темніший при наведенні */
         box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
         transform: translateY(-1px);
     }
@@ -699,10 +700,10 @@ footer {
     }
 
     .modal-photo {
-        width: 100px;
-        height: 100px;
+        width: 450px;
+        height: auto;
         object-fit: cover;
-        border-radius: 50%;
+        border-radius: 8px;
         margin: 0 auto;
     }
 
@@ -731,7 +732,6 @@ footer {
         width: fit-content;  /* Ширина суворо під розмір тексту та іконки */
         padding: 10px 25px; /* Зручні відступи для натискання */
     }
-
 
 
 
