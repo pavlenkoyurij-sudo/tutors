@@ -1,3 +1,4 @@
+
         const supabaseUrl = "https://kvnivreuwjgxqekaswed.supabase.co";
         const supabaseKey = "sb_publishable_lFliydUt3DSoAuntl79FdA_zHUVZpga";
 
@@ -149,6 +150,14 @@
                             🏆${tutor.experience} років досвіду
                         </p>
 
+                        <p>📚 Формат занять:
+                            ${[
+                                tutor.online ? "💻 Онлайн" : "",
+                                tutor.at_home ? "🏠 У репетитора" : "",
+                                tutor.visit_student ? "🚗 Виїзд до учня" : ""
+                            ].filter(Boolean).join(".")}
+                        </p>
+
                         <p class="tutor-city">📍${tutor.city}</p>
                             
                         <a class="call-btn"
@@ -232,9 +241,21 @@
 
             // Заповнюємо дані в модалці
             document.getElementById("modalName").textContent = tutor.name;
+            document.getElementById("modalId").textContent = "🆔 " + tutor.id;
             document.getElementById("modalProfession").textContent = "🖋️ " + categoryTitle; // 👈 Вже не буде undefined!
+            document.getElementById("modalExperience").textContent = "🏆 Дочвід: " + tutor.experience + " років";
             document.getElementById("modalCity").textContent = "📍 " + tutor.city;
             document.getElementById("modalDescription").textContent = tutor.description || "Опис відсутній.";
+            const format = [
+                tutor.online ? "💻 Онлайн" : "",
+                tutor.at_home ? "🏠 У репетитора" : "",
+                tutor.visit_student ? "🚗 Виїзд до учня" : ""
+            ].filter(Boolean).join(".");
+
+            document.getElementById("modalFormat").textContent =
+            "📚 Формат занять: " + (format || "Не вказано");
+            
+
             document.getElementById("modalCallBtn").href = "tel:" + tutor.phone;
             
             const photoEl = document.getElementById("modalPhoto");
