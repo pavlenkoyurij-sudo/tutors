@@ -142,8 +142,8 @@
                         <p>🖋️${categoryNames[tutor.category] || tutor.category}</p>
                         <p class="tutor-description">📜${tutor.description || 'Надання професійних послуг в нашому місті'}</p>
 
-                        <p>⭐${tutor.rating}
-                        (${tutor.reviews} відгуків)
+                        <p>⭐${tutor.rating ?? "Новий"}
+                        (${tutor.reviews ?? 0} відгуків)
                         </p>
 
                         <p>
