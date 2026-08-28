@@ -172,7 +172,8 @@
                         
                         ${tutor.isPremium && tutor.page ? `
                         <a class="premium-btn"
-                        href="${tutor.page}">
+                        href="${tutor.page}"
+                        onclick="event.stopPropagation()">
                         Детальніше:
                          </a>
                         ` : ""}
