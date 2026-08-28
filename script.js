@@ -158,10 +158,12 @@
                             ].filter(Boolean).join(".")}
                         </p>
 
+                        <p>💰${tutor.price || 'Ціна не вказана'}</p>
+
                         <p class="tutor-city">📍${tutor.city}</p>
                             
                         <a class="call-btn"
-                            href="tel:${tutor.phone}"
+                            href="tel:${tutor.phone}" 
                             onclick="event.stopPropagation()">
                             📞Подзвонити
                         </a>
@@ -244,7 +246,7 @@
             document.getElementById("modalName").textContent = tutor.name;
             document.getElementById("modalId").textContent = "🆔 " + tutor.id;
             document.getElementById("modalProfession").textContent = "🖋️ " + categoryTitle; // 👈 Вже не буде undefined!
-            document.getElementById("modalExperience").textContent = "🏆 Дочвід: " + tutor.experience + " років";
+            document.getElementById("modalExperience").textContent = "🏆 Досвід: " + tutor.experience + " років";
             document.getElementById("modalCity").textContent = "📍 " + tutor.city;
             document.getElementById("modalDescription").textContent = tutor.description || "Опис відсутній.";
             const format = [
@@ -255,6 +257,9 @@
 
             document.getElementById("modalFormat").textContent =
             "📚 Формат занять: " + (format || "Не вказано");
+
+            document.getElementById("modalPrice").textContent =
+            tutor.price ? "💰 " + tutor.price : "💰 Ціна не вказана";
             
 
             document.getElementById("modalCallBtn").href = "tel:" + tutor.phone;
