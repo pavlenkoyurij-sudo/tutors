@@ -44,7 +44,7 @@
                             <input type="text" id="tutorName" placeholder="👤 Ваше ім'я">
                             
                                 <select id="tutorCategory">
-                                <option value="">Оберіть напрямок</option>
+                                <option value="">Оберіть предмет</option>
                                 <option value="ukrainian">Українська мова</option>
                                 <option value="ukrainianLiterature">Українська література</option>
                                 <option value="english">Англійська мова</option>
@@ -82,6 +82,8 @@
                                         🏠 У репетитора
                                 </label>
                             </div>
+
+                            
                             
                             <input
                                 type="tel"
@@ -97,6 +99,15 @@
                                 max="60"
                                 placeholder="Досвід роботи, років:"
                                 required>
+
+                            <label for="tutorPrice">
+                                💰 Вартість занять:
+                            </label> 
+                            <input
+                                type="text"
+                                id="tutorPrice"
+                                placeholder="Наприклад 250 грн - 60 хвилин"
+                            >    
                             
                             
                             <textarea id="tutorDescription" placeholder="📝 Опис послуги"></textarea>
@@ -151,9 +162,13 @@
                
                 const tutorPhone = document.getElementById('tutorPhone').value;
                 const tutorExperience = document.getElementById('tutorExperience').value;
+
                 const tutorOnline = document.getElementById('tutorOnline').checked;
                 const tutorAtHome = document.getElementById('tutorAtHome').checked;
                 const tutorVisitStudent = document.getElementById('tutorVisitStudent').checked;
+
+                const tutorPrice = document.getElementById('tutorPrice').value;
+
                 const tutorDescription = document.getElementById('tutorDescription').value;
                 const photoFile = document.getElementById('tutorPhoto').files[0];
                 if (photoFile && photoFile.size > 2 * 1024 * 1024) {
