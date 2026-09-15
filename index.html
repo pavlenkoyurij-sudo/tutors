@@ -137,10 +137,11 @@
                     id="citySearch"
                     placeholder="🔎 Введіть місто..."
                     autocomplete="off"
+                    oninput="selectByCity()"
                 >
 
-                <div class="filters" class="filterCity">
-                    <button onclick="filterCity('all')">Всі міста</button>
+                <div class="filters">
+                    <button onclick="selectAllCities()">Всі міста</button>
                 </div>    
             </div>
 
