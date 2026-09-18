@@ -1,4 +1,3 @@
-
         const supabaseUrl = "https://kvnivreuwjgxqekaswed.supabase.co";
         const supabaseKey = "sb_publishable_lFliydUt3DSoAuntl79FdA_zHUVZpga";
 
@@ -42,7 +41,7 @@
             applyFilters();
         }
 
-        function selectByCity() {
+        function selectByCity() {//фушкція пошуку міста
             selectedCity = document
                 .getElementById("citySearch")
                 .value
@@ -118,6 +117,9 @@
             "painting": "Малювання",
             "music": "Музика",
             "others": "Інше",
+            "psychologist": "Послуги психолога",
+            "speech-therapist": "Послуги логопеда",
+            "defectologist": "Послуги дефектолога",
             
         };
 
@@ -153,8 +155,8 @@
                         <p>📚 Формат занять:
                             ${[
                                 tutor.online ? "💻 Онлайн" : "",
-                                tutor.at_home ? "🏠 У репетитора" : "",
-                                tutor.visit_student ? "🚗 Виїзд до учня" : ""
+                                tutor.at_home ? "🏠 У фахівця" : "",
+                                tutor.visit_student ? "🚗 Виїзд фахівця" : ""
                             ].filter(Boolean).join(".")}
                         </p>
 
@@ -251,8 +253,8 @@
             document.getElementById("modalDescription").textContent = tutor.description || "Опис відсутній.";
             const format = [
                 tutor.online ? "💻 Онлайн" : "",
-                tutor.at_home ? "🏠 У репетитора" : "",
-                tutor.visit_student ? "🚗 Виїзд до учня" : ""
+                tutor.at_home ? "🏠 У фахівця" : "",
+                tutor.visit_student ? "🚗 Виїзд фахівця" : ""
             ].filter(Boolean).join(".");
 
             document.getElementById("modalFormat").textContent =
@@ -288,8 +290,7 @@
 
 
 
-            //Функція пошуку
-        
+   
 
 
         
