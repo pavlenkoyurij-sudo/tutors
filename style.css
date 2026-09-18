@@ -733,6 +733,32 @@ footer {
         padding: 10px 25px; /* Зручні відступи для натискання */
     }
 
+    .extra-services {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 12px;
+        /*border-top: 1px solid #ddd;- лінія над кнопками фільтру репетиторів */
+        /* border-bottom: 1px solid #ddd;- лінія під кнопками фільтру репетиторів */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .extra-services button {
+        font-size: 16px;
+        border-radius: 5px;
+        border: 2px solid #888;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .extra-services button:hover {
+        background: #88abf6;
+        transform: translateY(-2px);
+    }
+
+
 
 
 
