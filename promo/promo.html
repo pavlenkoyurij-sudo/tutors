@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>тут ти зможеш додати своє оголошення про послуги репетитора в Запоріжжі</title>
-    <link rel="icon" type="image/png"href="../images/favicon.png">
+    <title>Додати анкету - Репетитори та фахівці Запоріжжя</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -20,7 +21,7 @@
 
         <!---головна обгортка для статті, щоб можна було змінювати її стилі --->
         <main class="promo-container">
-            <h1 class="promo-title">👋 Вітаю! Додайте свою картку репетитора. Це безкоштовно і займе лише кілька хвилин.<small><br>📅 Ваше оголошення буде розміщена на сайті протягом 365 днів.</small></h1>
+            <h1 class="promo-title">👋 Вітаю! Додайте свою картку фахівця. Це безкоштовно і займе лише кілька хвилин.<small><br>📅 Ваше оголошення буде розміщено на сайті протягом 365 днів.</small></h1>
 
                 <!-- Нова обгортка для Юлі та форми -->
                 <div class="promo-content">
@@ -44,7 +45,10 @@
                             <input type="text" id="tutorName" placeholder="👤 Ваше ім'я">
                             
                                 <select id="tutorCategory">
-                                <option value="">Оберіть предмет</option>
+                                <option value="">Оберіть предмет або послугу</option>
+                                <option value="psychologist">Послуги психолога</option>
+                                <option value="speech-therapist">Послуги логопеда</option>
+                                <option value="defectologist">Послуги дефектолога</option>
                                 <option value="ukrainian">Українська мова</option>
                                 <option value="ukrainianLiterature">Українська література</option>
                                 <option value="english">Англійська мова</option>
@@ -63,6 +67,7 @@
                                 <option value="music">Музика</option>
                                 <option value="others">Інше</option>
                                 
+                                
                             </select>
 
                             <div class="lesson-format">
@@ -74,12 +79,12 @@
 
                                 <label>
                                     <input type="checkbox" id="tutorVisitStudent">
-                                        🚗 Виїзд до учня
+                                        🚗 Виїзд фахівця
                                 </label>
 
                                 <label>
                                     <input type="checkbox" id="tutorAtHome">
-                                        🏠 У репетитора
+                                        🏠 У фахівця
                                 </label>
                             </div>
 
@@ -106,7 +111,7 @@
                             <input
                                 type="text"
                                 id="tutorPrice"
-                                placeholder="Наприклад 250 грн - 60 хвилин"
+                                placeholder="Наприклад 300 грн - 60 хвилин"
                             >    
                             
                             
