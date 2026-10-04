@@ -1,4 +1,9 @@
-        const supabaseUrl = "https://kvnivreuwjgxqekaswed.supabase.co";
+
+       const esc = s => String(s ?? '').replace(/[&<>"']/g,
+                c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));// Функція для екранування, захист від XSS атак
+       
+       
+       const supabaseUrl = "https://kvnivreuwjgxqekaswed.supabase.co";
         const supabaseKey = "sb_publishable_lFliydUt3DSoAuntl79FdA_zHUVZpga";
 
         const supabaseClient = window.supabase.createClient(
@@ -135,21 +140,21 @@
                         data-category="${tutor.category}"
                         onclick="openTutorModal(${tutor.id})">
 
-                        <img src="${tutor.photo}"
-                            alt="${tutor.name}"
+                        <img src="${esc(tutor.photo)}"
+                            alt="${esc(tutor.name)}"
                             onerror="this.onerror=null; this.src='images/default.jpeg';"> 
                             
-                        <h3>${tutor.name}</h3>
+                        <h3>${esc(tutor.name)}</h3>
 
                         <p>🖋️${categoryNames[tutor.category] || tutor.category}</p>
-                        <p class="tutor-description">📜${tutor.description || 'Надання професійних послуг в нашому місті'}</p>
+                        <p class="tutor-description">📜${esc(tutor.description) || 'Надання професійних послуг в нашому місті'}</p>
 
                         <p>⭐${tutor.rating ?? "Новий"}
                         (${tutor.reviews ?? 0} відгуків)
                         </p>
 
                         <p>
-                            🏆${tutor.experience} років досвіду
+                            🏆${esc(tutor.experience)} років досвіду
                         </p>
 
                         <p>📚 Формат занять:
@@ -160,12 +165,12 @@
                             ].filter(Boolean).join(".")}
                         </p>
 
-                        <p>💰${tutor.price || 'Ціна не вказана'}</p>
+                        <p>💰${esc(tutor.price) || 'Ціна не вказана'}</p>
 
-                        <p class="tutor-city">📍${tutor.city}</p>
+                        <p class="tutor-city">📍${esc(tutor.city)}</p>
                             
                         <a class="call-btn"
-                            href="tel:${tutor.phone}" 
+                            href="tel:${esc(tutor.phone)}" 
                             onclick="event.stopPropagation()">
                             📞Подзвонити
                         </a>
