@@ -293,10 +293,27 @@
                                            
 
 
+       //робота блоку ФАК
+        function toggleFAQ(question) {
 
+            let answer = question.nextElementSibling;
+
+            //перевіряємо чи саме ця відповідь відкрита
+            let isOpen = answer.classList.contains('open');
+
+            //закриваємо всі інші відповіді
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                if (ans !== answer) {         
+                    ans.classList.remove('open');
+                }
+            });
+
+            //якщо поточна була відкрита - закриваємо її, якщо закрита - відкриваємо
+            answer.classList.toggle('open');
+        }
 
    
-
+       
 
         
 
