@@ -1,6 +1,6 @@
-
+       // Функція для екранування, захист від XSS атак
        const esc = s => String(s ?? '').replace(/[&<>"']/g,
-                c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));// Функція для екранування, захист від XSS атак
+            c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
        
        
        const supabaseUrl = "https://kvnivreuwjgxqekaswed.supabase.co";
@@ -28,7 +28,10 @@
             }
             tutors = data;
             //Функція сортування репетиторів по рейтингу
-            tutors.sort((a, b) => b.rating - a.rating);
+            tutors.sort((a, b) =>
+                (Number(!!b.isPremium) - Number(!!a.isPremium)) ||
+                ((b.rating ?? 0) - (a.rating ?? 0))
+            );
 
             renderTutors();
 
@@ -136,15 +139,18 @@
                 
 
                 tutorGrid.innerHTML += `
-                    <div class="tutor-card"
-                        data-category="${tutor.category}"
+                    <div class="tutor-card ${tutor.isPremium ? 'premium' : ''}"
+                        data-category="${esc(tutor.category)}"
                         onclick="openTutorModal(${tutor.id})">
 
                         <img src="${esc(tutor.photo)}"
                             alt="${esc(tutor.name)}"
                             onerror="this.onerror=null; this.src='images/default.jpeg';"> 
                             
-                        <h3>${esc(tutor.name)}</h3>
+                        <div class="tutor-name-row">
+                            <h3>${esc(tutor.name)}</h3>
+                            ${tutor.isPremium ? `<span class="badge-top">TOP</span>` : ""}
+                        </div>
 
                         <p>🖋️${categoryNames[tutor.category] || tutor.category}</p>
                         <p class="tutor-description">📜${esc(tutor.description) || 'Надання професійних послуг в нашому місті'}</p>
@@ -289,11 +295,11 @@
                 modal.close();
             }
         });
-                                
-                                           
 
 
-       //робота блоку ФАК
+
+
+         //робота блоку ФАК
         function toggleFAQ(question) {
 
             let answer = question.nextElementSibling;
@@ -311,15 +317,8 @@
             //якщо поточна була відкрита - закриваємо її, якщо закрита - відкриваємо
             answer.classList.toggle('open');
         }
-
-   
-       
-
-        
-
-
-
-
+                                
+                       
 
 
 
