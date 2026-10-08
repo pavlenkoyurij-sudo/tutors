@@ -778,6 +778,70 @@ footer {
 
 
 
+    .faq-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        /*розділ "часті запатання*/
+        .faq-section h2 {
+            color: rgb(18, 19, 19);
+            margin-bottom: 50px;
+        }
+
+
+        .faq-item {
+
+            max-width: 900px;
+
+            margin: 20px auto;
+
+            padding: 25px;
+
+            background: rgba(0,0,0,0.5);
+
+            box-shadow: 0 0 40px rgba(0,255,255,0.2);
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(10px);
+
+            text-align: left;
+
+            margin-bottom: 20px;
+
+        }
+
+        .faq-item h3 {
+            color: cyan;
+            margin-bottom: 0;/*прибрали фіксований марджи, щоб не було дірки, коли блок закритий*/
+            cursor: pointer;
+        }
+
+        .faq-item p {
+            color: white;
+            line-height: 1.6;
+            margin: 0;
+            padding-top: 15px;/**/
+        }
+        
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            /*плавний перехід для висоти та прозорості*/
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+
+        }
+        
+        /*клас який ми додемо додавати за допомогою ява скрипт*/
+        .faq-answer.open {
+            max-height: 200px;/*значення має бути таким, щоб його вистачило для тексту*/
+            opacity: 1;
+        }
+
+
 
 
 
