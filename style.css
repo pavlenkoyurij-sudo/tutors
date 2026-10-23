@@ -880,6 +880,50 @@ footer {
             border-radius: 999px;
         }
 
+        /*--- головна секція предмеів: центруємо тект, додаємо відступи ---*/
+    .subject-section {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: rgba(255,255,255,0.65);
+        backdrop-filter: blur(1px);
+
+    }
+
+        /*--- підзаголовок ---*/
+    .subject-subtitle h2 {
+        color: #141313;
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+        /*--- контейнен(флекс-бокс) ---*/
+    .subject-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto 40px;
+    }
+
+    /* Стиль для  кнопки в навігації */
+    .link-subject-btn {
+        background-color: transparent; /* прозорий колір */
+        color: #000000;   /* Білий текст */
+        padding: 8px 16px;
+        border-radius: 20px;       /* Закруглення як у банера */
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.2s ease;
+    }
+
+    /* Ефект при наведенні курсору */
+    .link-subject-btn:hover {
+        background-color: #b8ccf8; /* Трохи темніший при наведенні */
+        box-shadow: none;
+        transform: translateY(-1px);
+    }
+
 
 
 
