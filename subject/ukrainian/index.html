@@ -1081,7 +1081,7 @@
                     .from("tutors")
                     .select("*")
                     .eq("approved", true)
-                    .in("category", ["ukrainian", "ukrainian-literature"]);
+                    .in("category", ["ukrainian", "ukrainianLiterature"]);
 
                 data = resuit.data;
                 error = resuit.error;
@@ -1114,7 +1114,7 @@
             }
 
             tutors = tutors.filter(tutor => 
-            (tutor.category === "ukrainian" || tutor.category === "ukrainian-literature") &&
+            (tutor.category === "ukrainian" || tutor.category === "ukrainianLiterature") &&
              tutor.approved === true
             );
             
