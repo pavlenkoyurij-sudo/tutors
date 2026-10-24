@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--адаптація для мобільних пристроїв-->
+        <!--СЕО ОПИС - МЕГА ВАЖЛИВО-->
+    <meta name="description"
+    content="Знайдіть репетитора української мови та літератури онлайн і в своєму місті. Переглядайте анкети викладачів та обирайте зручний формат навчання.">
+    <meta name="keywords"
+    content="репетитори української мови та літератури, онлайн репетитори, українська мова, українська література, навчання онлайн, репетитор, уроки української мови, уроки української літератури, підготовка до ЗНО, підготовка до НМТ, приватні уроки української мови, приватні уроки української літератури, викладач української мови, викладач української літератури, онлайн навчання, дистанційне навчання, уроки для школярів, уроки для студентів, уроки для дорослих, приватні заняття з української мови, приватні заняття з української літератури, репетитор для дітей, репетитор для підлітків, репетитор для дорослих, онлайн уроки української мови, онлайн уроки української літератури, приватні уроки онлайн, дистанційні уроки української мови, дистанційні уроки української літератури">
+    <title>Репетитори української мови та літератури</title>
+    <link rel="canonical" href="https://pavlenkoyurij-sudo.github.io/tutors/subject/ukrainian/index.html" />
+    <!--відсилка до стилів-->
+    <style>
+        
+        * {
+            box-sizing: border-box;
+            } 
+            
+        body {
+            background-image: url("../../images/background-image.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #2d1902;
+            margin: 0;
+            padding: 0;
+            /*font-family: Arial, sans-serif;*/
+            color: #2c2c2c;
+        }
+
+        
+        .hero {
+            text-align: center;
+            padding: 25px 20px;/*padding: 100px 20px; - високий хіро*/
+            margin-bottom: 40px;
+            position: relative;
+        }
+                /*затемнюючий фон шрифта заголовка*/
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.65);
+            z-index: 1;
+        }
+
+        .hero >*{
+            position: relative;
+            z-index: 2;
+            color: #2b2b2b;
+        }
+
+        .hero a {
+            font-size: 26px;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 18px;
+            border-radius: 6px;
+            background: #1e3a8a;
+            color: white;
+            text-decoration: none;
+
+            transition: 0.3s;
+
+        }
+
+        .hero a:hover {
+            background: #3773f5;
+            transform: translateY(-2px);
+        }
+
+            /*заголовок хіро*/
+        .hero h1 {
+            font-size: 48px;
+        }
+
+            /*підзаголовок*/
+        .hero p {
+            font-size: 22px;
+        }
+
+       
+
+
+       
+        
+         /* ===== Преміум-картка репетитора ===== */
+        .tutor-card.premium {
+            background: linear-gradient(180deg, #fffaf0, #fff3cf);
+            border: 2px solid #d4af37;
+            box-shadow: 0 6px 18px rgba(212, 175, 55, 0.45);
+        }
+
+        .tutor-card.premium:hover {
+            box-shadow: 0 10px 28px rgba(212, 175, 55, 0.65);
+        }
+
+        /* Рядок: ім'я + бейдж в одну лінію */
+        .tutor-name-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tutor-name-row h3 {
+            margin: 0;
+        }
+
+        /* Бейдж ТОП */
+        .badge-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #5a4300;
+            background: linear-gradient(135deg, #f7d774, #d4af37);
+            border-radius: 999px;
+        }
+
+        /*--- головна секція предмеів: центруємо тект, додаємо відступи ---*/
+        .subject-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: rgba(255,255,255,0.65);
+            backdrop-filter: blur(1px);
+
+        }
+
+            /*--- підзаголовок ---*/
+        .subject-subtitle h2 {
+            color: #141313;
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+            /*--- контейнен(флекс-бокс) ---*/
+        .subject-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+        }
+
+        /* Стиль для  кнопки в навігації */
+        .link-subject-btn {
+            background-color: transparent; /* прозорий колір */
+            color: #000000;   /* Білий текст */
+            padding: 8px 16px;
+            border-radius: 20px;       /* Закруглення як у банера */
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        /* Ефект при наведенні курсору */
+        .link-subject-btn:hover {
+            background-color: #b8ccf8; /* Трохи темніший при наведенні */
+            box-shadow: none;
+            transform: translateY(-1px);
+        }
+
+            /*===ФУТЕР===*/
+        footer {
+            font-size: 18px;
+            background: #1c1c1c;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+            /*кнопка - прокрутка догори*/
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 50%;
+            background: #1e3a8a;
+            color: white;
+            cursor: pointer;
+
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        } 
+
+        #scrollToTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #scrollToTopBtn:hover {
+            transform: scale(1.1);
+        }
+
+            /*секція майстрів*/
+        .tutors-section {
+            padding: 5px 5px;
+            text-align: center;
+        }
+
+        .tutors-section h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+                /*кнопки фільтрів*/
+        .filters button {
+            border: none;
+            border-radius: 5px;
+            background: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .filters button:hover {
+            background: #88abf6;
+            transform: translateY(-2px);
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+
+        .tutor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+            /*картки майстрів*/
+        .tutor-card {
+            font-size: 18px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            transition: 0.3s;
+            text-align: left;
+        }
+
+        .tutor-description {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .tutor-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+
+
+        .tutor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .tutor-card h3 {
+            margin-bottom: 10px;
+        }
+
+        
+
+        .tutor-selection {
+            font-size: 28px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+            /*плавний скрол*/
+        html {
+            scroll-behavior: smooth;
+        }
+
+            /*кнопки фільтру*/
+        .call-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: #1e3a8a;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .call-btn:hover {
+            background: #3773f5;
+        }
+
+        .tutor-card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        .tutor-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .city-filter {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+
+        
+        .city-filter button:hover {
+            background-color: #88abf6;
+            transform: scale(1.05);
+        }
+
+        #citySearch,
+        .city-filter button {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        #citySearch:hover {
+            background-color: rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+
+        .seo-text {
+            text-align: center;
+            line-height: 1.8;
+            max-width: 800px;
+            padding: 60px 20px;
+            margin: 0 auto;
+            color: #444;
+        }
+
+        .seo-text h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .seo-text p {
+            font-size: 18px;
+        }
+
+        /* Базові налаштування для шапки */
+        header {
+            display: flex;
+            justify-content: space-between; /* Розносить заголовок вліво, меню вправо */
+            align-items: center;
+            padding: 15px 40px;
+            position: sticky; /* Шапка плавно залишається вгорі при скролі */
+            top: 0;
+            z-index: 1000;
+            
+            /* М'який ефект скла, який не перетягує увагу */
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            
+            /* Тонка акуратна лінія знизу замість грубої тіні */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06); 
+            transition: all 0.3s ease;
+        }
+
+        /* Назва сайту в шапці */
+        header h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2c3e50; /* Спокійний темно-синій/сірий колір замість чисто чорного */
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .tutors-section p.tutor-subtitle {
+            font-size: 22px;
+            color: #0e0e0e; /* М'який сірий колір для другорядного тексту */
+            margin: 50px;
+        }
+
+        /* Контейнер для посилань */
+        header nav {
+            display: flex;
+            gap: 20px; /* Відступи між посиланнями, щоб код дихав */
+            align-items: center;
+        }
+
+        /* Стилі для звичайних посилань */
+        header nav a {
+            text-decoration: none;
+            color: #555; /* М'який колір для другорядних елементів */
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+        }
+
+        /* Ефект наведення на звичайні посилання */
+        header nav a:hover {
+            color: #2c3e50;
+            background: rgba(0, 0, 0, 0.04); /* Легке підсвічування фону */
+        }
+
+        /* Хак для важливих кнопок */
+        /* Посилання на Нікополь робимо трохи акцентним, але спокійним */
+        header nav a {
+            background: rgba(243, 156, 18, 0.1); /* Легкий натяк на твій фірмовий теплий колір */
+            color: #090909fe;
+            font-weight: 600;
+        }
+
+        header nav a:hover {
+            background: rgba(243, 156, 18, 0.18);
+            color: #20ba56;
+        }
+
+        
+
+        /* Адаптивність: якщо екран маленький (телефон), переносимо меню під заголовок */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px 20px;
+                text-align: center;
+            }
+            
+            header nav {
+                flex-wrap: wrap; /* Дозволяє посиланням переноситися на новий рядок на смартфонах */
+                justify-content: center;
+                gap: 8px;
+            }
+            
+            header nav a {
+                font-size: 0.85rem;
+                padding: 5px 10px;
+            }
+        }
+
+    
+        /* стилі футера */
+        footer a{
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover{
+            color: orange;
+        }
+
+        /* Стиль для  кнопки в навігації */
+        .nav-btn-highlight {
+            background-color: transparent; /* Помаранчевий колір */
+            color: #0a0a0a !important;   /* Темний текст */
+            padding: 8px 16px;
+            border-radius: 20px;       /* Закруглення як у банера */
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        /* Ефект при наведенні курсору */
+        .nav-btn-highlight:hover {
+            background-color: #88abf6; /* Трохи темніший при наведенні */
+            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+            transform: translateY(-1px);
+        }
+
+ 
+
+        /* Модальне вікно */
+        .tutor-modal {
+            border: none;
+            border-radius: 16px;
+            padding: 25px;
+            width: 90%;
+            max-width: 550px;
+            max-height: 85vh; /* Якщо текст великий, вікно не вийде за межі екрана */
+            overflow-y: auto; /* Вмикає скрол усередині вікна */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Затемнення та розмиття фону */
+        .tutor-modal::backdrop {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .modal-close-icon {
+            position: absolute;
+            top: -10px;
+            right: -5px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-photo {
+            width: 450px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+
+        .modal-desc {
+            white-space: pre-line; /* Зберігає абзаци та переноси рядків */
+            line-height: 1.5;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        /* Обрізаємо опис у картці до 3 рядків, щоб усі картки були рівними */
+        .tutor-description {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Курсор-вказівник для картки, щоб юзер розумів, що на неї можна натиснути */
+        .tutor-card {
+            cursor: pointer;
+        }
+
+        #modalCallBtn {
+            align-self: center; /* Вирівнює саме кнопку по центру, не розтягуючи */
+            width: fit-content;  /* Ширина суворо під розмір тексту та іконки */
+            padding: 10px 25px; /* Зручні відступи для натискання */
+        }
+
+        .extra-services {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 12px;
+            /*border-top: 1px solid #ddd;- лінія над кнопками фільтру репетиторів */
+            /* border-bottom: 1px solid #ddd;- лінія під кнопками фільтру репетиторів */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .extra-services button {
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid #888;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .extra-services button:hover {
+            background: #88abf6;
+            transform: translateY(-2px);
+        }
+
+
+
+
+    </style>
+    
+
+
+</head>
+
+
+
+
+
+<body>
+
+    <header>
+        <h2>Репетитори української мови та літератури</h2>
+        <nav>
+                <a href="../../index.html" class="nav-btn-highlight">На головну</a>
+                <a href="#tutors" class="nav-btn-highlight">Викладачі</a>
+                              
+                <a href="https://pavlenkoyurij-sudo.github.io/tutors/promo/promo.html" class="nav-btn-highlight">Стати фахівцем</a>
+                
+                
+                
+                
+        </nav>
+            
+
+    </header>
+
+
+    <main>
+
+        <section id="home" class="hero">
+
+            
+           
+
+            
+
+            
+
+        </section>    
+        
+
+
+
+
+        
+
+
+       
+
+
+
+        <section id="tutors" class="tutors-section">
+            <h2>Знайдіть свого репетитора</h2>
+            <p class="tutor-subtitle">Викладачі з української мови, української літератури онлайн та у вашому місті</p>
+            <div class="city-filter">
+
+                <input
+                    type="text"
+                    id="citySearch"
+                    placeholder="🔎 Введіть місто..."
+                    autocomplete="off"
+                    oninput="selectByCity()"
+                >
+
+                <div class="filters">
+                    <button onclick="selectAllCities()">Всі міста</button>
+                </div>    
+            </div>
+
+
+
+
+
+            
+            
+
+
+
+            <div class="tutor-grid" id="tutorGrid">
+
+                <!-- Інна, ID 16 -->
+                <div class="tutor-card"
+                    data-category="ukrainian"
+                    data-tutor-id="16"
+                    onclick="openTutorModal(16)">
+
+                    <img src="../../images/default.jpeg"
+                        alt="Інна — репетиторка української мови та літератури">
+
+                    <div class="tutor-name-row">
+                        <h3>Інна</h3>
+                    </div>
+
+                    <p>🖋️ Українська мова та література</p>
+
+                    <p class="tutor-description">Запрошую на індивідуальні онлайн-заняття з УКРАЇНСЬКОЇ МОВИ.
+                Якісно підготую до НМТ (ЗНО) та інших випробувань.
+                ● НМТ-2027
+                ● НМТ-2028
+                ● Рання підготовка до НМТ (ЗНО) для учнів 8-9 класів
+                ● Підготовка до вступу в коледжі та ліцеї (співбесіда, диктант,
+                тестування)
+                ● Шкільна програма
+                ПРО СЕБЕ
+                Вища педагогічна / філологічна освіта. Протягом тривалого часу
+                працювала вчителькою української мови та літератури в школі.
+                Досвід репетиторства 21 рік, понад 8 років успішно навчаю онлайн.
+                Постійно підвищую власну кваліфікацію. Спеціалізуюсь на підготовці
+                учнів до НМТ.
+                Здійснюю індивідуальний підхід.
+                Діє система знижок.</p>
+
+                    <p>🏆 21 рік досвіду</p>
+                    <p>📚 Формат занять: 💻 Онлайн, індивідуально</p>
+                    <p>💰 500 грн — 60 хв</p>
+                    <p class="tutor-city">📍 Кривий Ріг</p>
+
+                    <a class="call-btn"
+                    href="tel:0973315965"
+                    onclick="event.stopPropagation()">📞 Подзвонити</a>
+                </div>
+
+
+                <!-- Тетяна, ID 17 -->
+                <div class="tutor-card"
+                    data-category="ukrainian"
+                    data-tutor-id="17"
+                    onclick="openTutorModal(17)">
+
+                    <img src="https://kvnivreuwjgxqekaswed.supabase.co/storage/v1/object/public/tutor-photos/1790666396602_2025-08-20%2013.13.01.jpg"
+                        alt="Тетяна — репетиторка української мови та літератури">
+
+                    <div class="tutor-name-row">
+                        <h3>Тетяна</h3>
+                    </div>
+
+                    <p>🖋️ Українська мова та література</p>
+
+                    <p class="tutor-description">Репетиторка з української мови та літератури. Маю досвід близько 5 років, а також десятки задоволених клієнтів. Працюю з 5-11 класами, готую до НМТ</p>
+
+                    <p>🏆 5 років досвіду</p>
+                    <p>📚 Формат занять: 💻 Онлайн</p>
+                    <p>💰 330 грн/год</p>
+                    <p class="tutor-city">📍 Івано-Франківськ</p>
+
+                    <a class="call-btn"
+                    href="tel:380507350637"
+                    onclick="event.stopPropagation()">📞 Подзвонити</a>
+                </div>
+
+
+                <!-- Ірина, ID 21 -->
+                <div class="tutor-card"
+                    data-category="ukrainian"
+                    data-tutor-id="21"
+                    onclick="openTutorModal(21)">
+
+                    <img src="https://kvnivreuwjgxqekaswed.supabase.co/storage/v1/object/public/tutor-photos/1790714838427_IMG_3255.jpeg"
+                        alt="Ірина — репетиторка української мови">
+
+                    <div class="tutor-name-row">
+                        <h3>Ірина</h3>
+                    </div>
+
+                    <p>🖋️ Українська мова</p>
+
+                    <p class="tutor-description">Запрошую на інтерактивні уроки української мови! Навчання проходить у сучасній та захопливій формі:
+                •Індивідуальний, парний та груповий формати — вибір зручного темпу та атмосфери для учня.
+                •Розвиток мовлення та грамотності — покращення словникового запасу, освоєння граматики, орфографії та пунктуації.
+                •Цікава методика — використання інтерактивних вправ, навчальних ігор та карток для максимальної мотивації та легкого засвоєння матеріалу. Також готую до НМТ</p>
+
+                    <p>🏆 5 років досвіду</p>
+                    <p>📚 Формат занять: 💻 Онлайн</p>
+                    <p>💰 350 грн — 60 хв</p>
+                    <p class="tutor-city">📍 Київ</p>
+
+                    <a class="call-btn"
+                    href="tel:+380675156201"
+                    onclick="event.stopPropagation()">📞 Подзвонити</a>
+                </div>
+
+
+                <!-- Ліліана, ID 29 -->
+                <div class="tutor-card"
+                    data-category="ukrainian"
+                    data-tutor-id="29"
+                    onclick="openTutorModal(29)">
+
+                    <img src="https://kvnivreuwjgxqekaswed.supabase.co/storage/v1/object/public/tutor-photos/1791374382208_inbound8480864811791185052.jpg"
+                        alt="Ліліана — репетиторка української мови">
+
+                    <div class="tutor-name-row">
+                        <h3>Ліліана</h3>
+                    </div>
+
+                    <p>🖋️ Українська мова</p>
+
+                    <p class="tutor-description">Моя методика викладання української мови ґрунтується на інтерактивному підході, де учні і слухають, і активно беруть участь у процесі. Замість традиційних лекцій,  використовую проєктне навчання, дискусії та дебати, також успішно інтегрую онлайн-платформи та застосунки, щоб зробити навчання динамічним та цікавим.
+                </p>
+
+                    <p>🏆 24 роки досвіду</p>
+                    <p>📚 Формат занять: 💻 Онлайн</p>
+                    <p>💰 450 грн — 60 хв</p>
+                    <p class="tutor-city">📍 Кривий Ріг</p>
+
+                    <a class="call-btn"
+                    href="tel:+380962888974"
+                    onclick="event.stopPropagation()">📞 Подзвонити</a>
+                </div>
+
+                <!-- Юлія, ID 47 -->
+                <div class="tutor-card"
+                    data-category="ukrainian"
+                    data-tutor-id="47"
+                    onclick="openTutorModal(47)">
+
+                    <img src="../../images/default.jpeg"
+                        alt="Юлія — репетиторка української мови">
+
+                    <div class="tutor-name-row">
+                        <h3>Юлія</h3>
+                    </div>
+
+                    <p>🖋️ Українська мова для учнів 5–9 класів</p>
+
+                    <p class="tutor-description">💛 Українська мова для учнів 5–9 класів
+
+                Привіт! Я Юлія — вчителька української мови з понад 10-річним досвідом.
+                Моя мета — не просто навчити дитину правил, а допомогти їй зрозуміти українську мову й упевнено використовувати свої знання.
+
+                📚 З чим допоможу?
+
+                ✏️ Поясню складні теми простими словами, без зайвої теорії та зубріння.
+
+                📖 Допоможу розібратися зі шкільною програмою та надолужити пропущений матеріал.
+
+                🎯 Підготую до контрольних, діагностувальних робіт та іспитів.
+
+                🔎 Допоможу знайти прогалини в знаннях і поступово їх усунути.
+
+                🎮 А як проходять уроки?
+
+                Ми не просто читаємо правила й виконуємо вправи. На заняттях є інтерактивні ігри, мовні квести, цікаві завдання та багато практики.
+
+                Я люблю, коли учні запитують, міркують, іноді помиляються, а потім радісно вигукують:
+                «А-а-а, тепер зрозуміло!» ❤️
+
+                Трохи про формат:
+
+                💻 Онлайн у Zoom
+
+                ⏰ 60 хвилин — 350 грн
+
+                👩‍🏫 Індивідуальний підхід і власні навчальні матеріали
+
+                🎁 Перше діагностувальне заняття — безкоштовне.
+
+                Якщо ваша дитина каже, що українська — це складно, нудно або «я нічого не розумію», приходьте знайомитися. Покажу, що може бути інакше. 😊</p>
+
+                    <p>🏆 Понад 10 років досвіду</p>
+                    <p>📚 Формат занять: 💻 Онлайн (Zoom)</p>
+                    <p>💰 60 хвилин — 350 грн</p>
+                    <p class="tutor-city">📍 Київ</p>
+
+                    <a class="call-btn"
+                    href="tel:+380958974896"
+                    onclick="event.stopPropagation()">📞 Подзвонити</a>
+                </div>
+            </div> 
+
+
+        
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+        
+
+
+        <section class="subject-section">
+            <h2>Більше предметів</h2>
+            <div>                
+                <a href="https://pavlenkoyurij-sudo.github.io/tutors/subject/english/index.html" class="link-subject-btn">Репетитори англійської мови</a>
+                <a href="https://pavlenkoyurij-sudo.github.io/tutors/subject/ukrainian/index.html" class="link-subject-btn">Репетитори української мови та літератури</a>
+                <a href="https://pavlenkoyurij-sudo.github.io/tutors/subject/math/index.html" class="link-subject-btn">Репетитори математики</a>
+            </div>
+            
+
+        </section>
+
+        
+
+        
+
+
+
+        
+
+
+        <section class="seo-text">
+            <h2>Репетитори з української мови та літератури онлайн</h2>
+
+            <p>
+                У каталозі зібрані анкети викладачів української мови та літератури для школярів і дорослих:
+                від допомоги зі шкільною програмою до підготовки до НМТ.
+            </p>
+
+            <h3>Кому допоможе репетитор з української</h3>
+            <ul>
+                <li>Школярам 1-11 класів: граматика, диктанти, домашні завдання, підтягування оцінок.</li>
+                <li>Абітурієнтам: підготовка до НМТ, практика тестових завдань, читання й аудіювання.</li>
+                <li>Тим, хто вчить літературу: аналіз творів, підготовка до контрольних і написання творів.</li>
+                <li>Дорослим, які хочуть писати грамотно або говорити українською впевненіше.</li>
+            </ul>
+
+            <h3>Онлайн-заняття</h3>
+            <p>
+                Усі викладачі в каталозі проводять заняття дистанційно, тож можна обрати репетитора
+                незалежно від міста. Формат кожного фахівця вказано в його картці.
+            </p>
+
+            <h3>Як обрати репетитора з української мови</h3>
+            <p>
+                Визначте мету: оцінки в школі, НМТ чи розмовна практика. Прочитайте опис і досвід фахівця,
+                домовтеся про пробне заняття, щоб оцінити методику й темп, та заздалегідь узгодьте
+                вартість, тривалість і графік.
+            </p>
+
+            <h3>Скільки коштують заняття з української</h3>
+            <p>
+                Вартість залежить від досвіду викладача, тривалості уроку та мети занять.
+                Її вказують самі репетитори в анкетах, тому порівняйте кілька пропозицій
+                і уточніть умови безпосередньо в обраного фахівця. Вартість занять з української мови та літератури в каталозі коливається від 200 до 500 грн за годину.
+            </p>
+        </section>
+
+
+        
+
+
+
+
+        
+
+
+       
+
+
+
+
+        
+
+        
+
+
+        
+
+        
+
+        
+
+    </main>    
+
+
+    
+    
+    
+
+    
+
+
+
+    <button id="scrollToTopBtn" aria-label="Наверх">
+            ▲
+        </button> <!--кнопка наверх-->
+
+
+
+
+
+
+    <footer id="contacts"> 
+        <h2>Викладачі української мови Каталогу репетиторів та фахівців з розвитку дитини</h2>
+
+         
+        <p>
+            <a href="https://www.facebook.com/share/g/19W3eJeLfH/"
+                target="_blank"
+                rel="noopener noreferrer">
+                📘Наш Facebook
+            </a>
+        </p>  
+
+        
+
+            <p>📍Запоріжжя, Україна</p>
+
+            <p>© Репетитори та фахівці з розвитку дитини 2026</p>
+
+            <p><small style="color: #ff8533;">Правила публікації матеріалів:</small></p>
+            <p><small style="color: #ff8533;">Ми поважаємо авторські права та права інших людей. Якщо будь-який матеріал на сайті порушує ваші права, <br>повідомте нас через контакти, і ми оперативно його перевіримо та, за потреби, виправимо або видалимо. T:+380957996024</small></p>
+
+
+
+    </footer>
+
+
+     <!-- Універсальне модальне вікно для детального опису -->
+    <dialog id="tutorModal" class="tutor-modal">
+        <div class="modal-content">
+            <button class="modal-close-icon" onclick="closeTutorModal()">&times;</button>
+            <img id="modalPhoto" src="" alt="" class="modal-photo">
+            <h3 id="modalName"></h3>
+            <p id="modalId" class="modal-id"></p>
+            <p id="modalProfession" class="modal-prof"></p>
+            <p id="modalExperience" class="modal-experience"></p>
+            <p id="modalCity" class="modal-city"></p>
+            <p id="modalFormat" class="modal-format"></p>
+            <p id="modalPrice" class="modal-price"></p>
+            <hr>
+            <h4>Повний опис послуг:</h4>
+            <p id="modalDescription" class="modal-desc"></p>
+            <hr>
+            <a id="modalCallBtn" href="" class="call-btn">📞 Подзвонити</a>
+        </div>
+    </dialog>
+
+        <!--посилання до супербази-->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+         <!--резервні анкети репетиторів-->
+    <script src="../../tutors-backup.js"></script>
+        <!--посилання до основного ява скрипта-->
+    <script>
+         // Функція для екранування, захист від XSS атак
+       const esc = s => String(s ?? '').replace(/[&<>"']/g,
+            c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+       
+       
+       const supabaseUrl = "https://kvnivreuwjgxqekaswed.supabase.co";
+        const supabaseKey = "sb_publishable_lFliydUt3DSoAuntl79FdA_zHUVZpga";
+
+        
+        let supabaseClient = null;
+        if (window.supabase) {
+            supabaseClient = window.supabase.createClient(
+                supabaseUrl,
+                supabaseKey
+            );
+        }
+
+
+
+        let tutors = [];
+        let selectedCategory = "all";
+        let selectedCity = "";
+          
+            
+        async function loadTutors() {
+            
+
+            let data = null;
+            let error = null;
+
+            if (supabaseClient) {
+                const resuit = await supabaseClient
+                    .from("tutors")
+                    .select("*")
+                    .eq("approved", true)
+                    .in("category", ["ukrainian", "ukrainian-literature"]);
+
+                data = resuit.data;
+                error = resuit.error;
+            } else {
+                error = "Бібліотека Supabase не завантажена. Використовується локальна резервна копія.";
+            }
+
+
+
+
+
+            if (error) {
+                console.error("Супербаза НЕДОСТУПНА:", error);
+
+                // Використаємо локальну резервну копію
+                if (Array.isArray(window.backupTutors)) {
+                    tutors = [...window.backupTutors];
+                    console.log(
+                        "Завантажено локальну резервну копію Анкет:",
+                        tutors.length
+                    );
+                } else {
+                    console.error("Резервні анкети не знайдено");
+                    return;
+                }
+            } else {
+                // Якщо дані успішно отримані з Supabase, використовуємо їх
+            
+            tutors = data;
+            }
+
+            tutors = tutors.filter(tutor => 
+            (tutor.category === "ukrainian" || tutor.category === "ukrainian-literature") &&
+             tutor.approved === true
+            );
+            
+            //Функція сортування репетиторів по рейтингу
+            tutors.sort((a, b) =>
+                (Number(!!b.isPremium) - Number(!!a.isPremium)) ||
+                ((b.rating ?? 0) - (a.rating ?? 0))
+            );
+
+            renderTutors();
+
+        }
+            
+
+        
+        
+        
+        
+        
+
+        function filterTutors(category) {
+            selectedCategory = category;
+            applyFilters();
+        }
+
+        function selectByCity() {//фушкція пошуку міста
+            selectedCity = document
+                .getElementById("citySearch")
+                .value
+                .toLowerCase()
+                .trim();
+
+            applyFilters();
+        }
+
+        function applyFilters() {
+            document.querySelectorAll(".tutor-card").forEach(card => {
+
+                const category = card.dataset.category;
+
+                const city = card
+                    .querySelector(".tutor-city")
+                    .textContent
+                    .toLowerCase();
+
+                const categoryMatch =
+                    selectedCategory === "all" ||
+                    category === selectedCategory;
+
+                const cityMatch =
+                    selectedCity === "" ||
+                    city.includes(selectedCity);
+
+                card.style.display =
+                    categoryMatch && cityMatch ? "" : "none";
+            });
+        }
+
+        function selectAllCities() {
+            document.getElementById('citySearch').value = "";
+            selectedCity = "";
+            applyFilters();
+        }
+
+      
+                
+
+
+
+        
+
+         
+
+        //місцеве сховище дл фаворитів
+        let favorites = JSON.parse(
+            localStorage.getItem("favorites")
+        ) || [];
+
+
+        
+            
+
+            
+        const tutorGrid = document.getElementById("tutorGrid");
+        const categoryNames = {
+            
+            ukrainian: "Українська мова",
+            "ukrainian-literature": "Українська література"
+        };
+
+        function renderTutors() {
+                // Зберігаємо статичні картки, які вже є в HTML, щоб не дублювати їх при рендері
+            const staticCards = Array.from(tutorGrid.querySelectorAll("[data-tutor-id]")
+            );
+            // Запам'ятовуємо ID статичних карток, щоб не дублювати їх при рендері
+            const staticIds = staticCards.map(card => Number(card.dataset.tutorId)
+            );
+            //
+            tutorGrid.querySelectorAll(".tutor-card:not([data-tutor-id])")
+                .forEach(card => card.remove());
+
+            //tutorGrid.innerHTML = "";
+
+            tutors.forEach(tutor => {
+                
+                if (staticIds.includes(Number(tutor.id))) {
+                    // Пропускаємо репетиторів зі статичними ID
+                    return;
+                }
+                tutorGrid.insertAdjacentHTML("beforeend", `
+                    <div class="tutor-card ${tutor.isPremium ? 'premium' : ''}"
+                        data-category="${esc(tutor.category)}"
+                        onclick="openTutorModal(${tutor.id})">
+
+                        <img src="${esc(tutor.photo)}"
+                            alt="${esc(tutor.name)}"
+                            onerror="this.onerror=null; this.src='../../images/default.jpeg';"> 
+                            
+                        <div class="tutor-name-row">
+                            <h3>${esc(tutor.name)}</h3>
+                            ${tutor.isPremium ? `<span class="badge-top">TOP</span>` : ""}
+                        </div>
+
+                        <p>🖋️${categoryNames[tutor.category] || tutor.category}</p>
+                        <p class="tutor-description">📜${esc(tutor.description) || 'Надання професійних послуг в нашому місті'}</p>
+
+                        <p>⭐${tutor.rating ?? "Новий"}
+                        (${tutor.reviews ?? 0} відгуків)
+                        </p>
+
+                        <p>
+                            🏆${esc(tutor.experience)} років досвіду
+                        </p>
+
+                        <p>📚 Формат занять:
+                            ${[
+                                tutor.online ? "💻 Онлайн" : "",
+                                tutor.at_home ? "🏠 У фахівця" : "",
+                                tutor.visit_student ? "🚗 Виїзд фахівця" : ""
+                            ].filter(Boolean).join(".")}
+                        </p>
+
+                        <p>💰${esc(tutor.price) || 'Ціна не вказана'}</p>
+
+                        <p class="tutor-city">📍${esc(tutor.city)}</p>
+                            
+                        <a class="call-btn"
+                            href="tel:${esc(tutor.phone)}" 
+                            onclick="event.stopPropagation()">
+                            📞Подзвонити
+                        </a>
+
+                        
+                        
+                        ${tutor.isPremium && tutor.page ? `
+                        <a class="premium-btn"
+                        href="${tutor.page}"
+                        onclick="event.stopPropagation()">
+                        Детальніше:
+                         </a>
+                        ` : ""}
+                        
+
+                            
+                    </div>
+                `); 
+            });
+
+           
+        }
+
+        
+      
+        
+
+
+
+        loadTutors(); //рендерить список tytor;
+        
+        
+
+               
+
+
+       
+
+
+        // Логіка модального вікна
+        const modal = document.getElementById("tutorModal");
+
+        function openTutorModal(id) {
+            // Знаходимо репетитора в масиві за id
+            const tutor = tutors.find(m => m.id === id);
+            if (!tutor) return;
+
+            // Отримуємо зрозумілу назву категорії зі словника categoryNames
+            const categoryTitle = categoryNames[tutor.category] || tutor.profession || tutor.category;
+
+            // Заповнюємо дані в модалці
+            document.getElementById("modalName").textContent = tutor.name;
+            document.getElementById("modalId").textContent = "🆔 " + tutor.id;
+            document.getElementById("modalProfession").textContent = "🖋️ " + categoryTitle; // 👈 Вже не буде undefined!
+            document.getElementById("modalExperience").textContent = "🏆 Досвід: " + tutor.experience + " років";
+            document.getElementById("modalCity").textContent = "📍 " + tutor.city;
+            document.getElementById("modalDescription").textContent = tutor.description || "Опис відсутній.";
+            const format = [
+                tutor.online ? "💻 Онлайн" : "",
+                tutor.at_home ? "🏠 У фахівця" : "",
+                tutor.visit_student ? "🚗 Виїзд фахівця" : ""
+            ].filter(Boolean).join(".");
+
+            document.getElementById("modalFormat").textContent =
+            "📚 Формат занять: " + (format || "Не вказано");
+
+            document.getElementById("modalPrice").textContent =
+            tutor.price ? "💰 " + tutor.price : "💰 Ціна не вказана";
+            
+
+            document.getElementById("modalCallBtn").href = "tel:" + tutor.phone;
+            
+            const photoEl = document.getElementById("modalPhoto");
+            photoEl.src = tutor.photo || '../../images/default.jpeg';
+            photoEl.onerror = () => { photoEl.src = '../../images/default.jpeg'; };
+
+            // Відкриваємо вікно
+            modal.showModal();
+        }
+
+        function closeTutorModal() {
+            modal.close();
+        }
+
+        // Закриття при кліку на вільну частину екрана (на затемнений фон backdrop)
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.close();
+            }
+        });
+
+
+
+
+         //робота блоку ФАК
+        function toggleFAQ(question) {
+
+            let answer = question.nextElementSibling;
+
+            //перевіряємо чи саме ця відповідь відкрита
+            let isOpen = answer.classList.contains('open');
+
+            //закриваємо всі інші відповіді
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                if (ans !== answer) {         
+                    ans.classList.remove('open');
+                }
+            });
+
+            //якщо поточна була відкрита - закриваємо її, якщо закрита - відкриваємо
+            answer.classList.toggle('open');
+        }
+                                
+                       
+        //downloadTutorsBackup();
+
+
+               
+           //кнопка повернення догори    
+        const btn = document.getElementById("scrollToTopBtn");       
+               
+               //показує кнопку, коли юзер прокручує сторінку до низу
+        window.addEventListener("scroll", () => {
+            btn.classList.toggle(
+                "show",
+                window.scrollY > 300
+            );
+        });
+            
+
+        
+                //прокручує сторінку плавно до самого верху при натисканні
+        btn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"//забезпечує плавний скролінг
+            });
+        });
+    </script> 
+
+
+
+
+        
+
+
+</body>
+</html>
