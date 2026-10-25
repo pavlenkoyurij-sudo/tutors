@@ -181,9 +181,7 @@
                             📞Подзвонити
                         </a>
 
-                        <button class="favorite-btn" data-id="${tutor.id}" onclick="toggleFavorite(event, ${tutor.id})">
-                         ⭐ В обране
-                        </button>
+                        
                         
                         ${tutor.isPremium && tutor.page ? `
                         <a class="premium-btn"
