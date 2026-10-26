@@ -122,6 +122,7 @@
             "geography": "Географія",
             "history": "Історія",
             "informatics": "Інформатика",
+            "primary-school": "Початкові класи",  
             "painting": "Малювання",
             "music": "Музика",
             "others": "Інше",
