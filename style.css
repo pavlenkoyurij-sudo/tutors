@@ -896,33 +896,116 @@ footer {
         margin-bottom: 30px;
     }
 
-        /*--- контейнен(флекс-бокс) ---*/
-    .subject-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        max-width: 1000px;
-        margin: 0 auto 40px;
-    }
+        /* Панель вибору предметів */
+        .subject-picker {
+            margin: 24px auto;
+            padding: 24px;
+            max-width: 1000px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: 0 4px 18px rgba(30, 55, 100, 0.08);
+        }
 
-    /* Стиль для  кнопки в навігації */
-    .link-subject-btn {
-        background-color: transparent; /* прозорий колір */
-        color: #000000;   /* Білий текст */
-        padding: 8px 16px;
-        border-radius: 20px;       /* Закруглення як у банера */
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.2s ease;
-    }
+        /* Заголовок панелі */
+        .subject-picker h2 {
+            margin: 0 0 8px;
+            color: #243B64;
+            font-size: clamp(20px, 2.5vw, 28px);
+            text-align: center;
+        }
 
-    /* Ефект при наведенні курсору */
-    .link-subject-btn:hover {
-        background-color: #b8ccf8; /* Трохи темніший при наведенні */
-        box-shadow: none;
-        transform: translateY(-1px);
-    }
+        /* Пояснення під заголовком */
+        .subject-picker-hint {
+            margin: 0 0 22px;
+            color: #5B6780;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        /* Сітка кнопок */
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        /* Кнопки переходу між предметами */
+        .link-subject-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            min-height: 54px;
+            padding: 14px 18px;
+
+            color: #243B64;
+            background: #FFFFFF;
+            border: 1px solid #CCD7E8;
+            border-radius: 12px;
+
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+            text-align: left;
+            text-decoration: none;
+
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+        }
+
+                /* Стрілка праворуч */
+        .link-subject-btn::after {
+            content: "›";
+            flex-shrink: 0;
+            font-size: 24px;
+            line-height: 1;
+            margin-left: auto;
+        }
+
+        /* Наведення мишкою */
+        .link-subject-btn:hover {
+            color: #FFFFFF;
+            background: #243B64;
+            border-color: #243B64;
+            box-shadow: 0 4px 12px rgba(36, 59, 100, 0.18);
+            transform: translateY(-2px);
+        }
+
+        /* Клавіатурна навігація */
+        .link-subject-btn:focus-visible {
+            outline: 3px solid #7399D5;
+            outline-offset: 3px;
+        }
+
+        /* Телефони */
+        @media (max-width: 600px) {
+            .subject-picker {
+                margin: 16px 10px;
+                padding: 18px 14px;
+                border-radius: 14px;
+            }
+
+            .subject-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .link-subject-btn {
+                min-height: 50px;
+                padding: 12px 14px;
+            }
+        }
+
+        /* Пристрої, де немає наведення */
+        @media (hover: none) {
+            .link-subject-btn:hover {
+                transform: none;
+            }
+        }
 
 
 
