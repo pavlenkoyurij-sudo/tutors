@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--адаптація для мобільних пристроїв-->
+        <!--СЕО ОПИС - МЕГА ВАЖЛИВО-->
+    <meta name="description"
+    content="Дізнайтеся про освітній каталог репетиторів та фахівців з розвитку дитини: наші принципи, можливості для учнів та викладачів та розвиток проекту ">
+    
+    <title>Репетитори та фахівці з розвитку дитини</title>
+
+   <link rel="canonical" href="https://pavlenkoyurij-sudo.github.io/tutors/about-us.html" />
+    
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+     <style>
+        
+        * {
+            box-sizing: border-box;
+            } 
+            
+        body {
+            background-image: url("../images/background-image.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #2d1902;
+            margin: 0;
+            padding: 0;
+            /*font-family: Arial, sans-serif;*/
+            color: #2c2c2c;
+        }
+
+        
+        .hero {
+            
+            padding: 10px 10px;/*padding: 100px 20px; - високий хіро*/
+            margin-bottom: 10px;
+            
+        }
+
+            /*===ФУТЕР===*/
+        footer {
+            font-size: 18px;
+            background: #1c1c1c;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-decoration: none;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffd166;
+            text-decoration: underline;
+        }
+
+        /* Контейнер для посилань */
+        header nav {
+            display: flex;
+            gap: 20px; /* Відступи між посиланнями, щоб код дихав */
+            align-items: center;
+
+        }
+
+        /* Стилі для звичайних посилань */
+        header nav a {
+            text-decoration: none;
+            color: #555; /* М'який колір для другорядних елементів */
+            font-size: 0.95rem;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+            margin-top: 10px;
+        }
+
+        
+
+        header nav a:hover {
+            background: rgba(243, 156, 18, 0.18);
+            color: #203cba;
+        }
+
+        /* ===== БЛОК "ПРО НАС" ===== */
+
+        .about-us {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        /* Головна картка */
+        .about-card {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+                /* Головний заголовок */
+        .about-card h1 {
+            color: #25364a;
+            font-size: 32px;
+            line-height: 1.3;
+            text-align: center;
+            margin: 0 0 20px;
+        }
+
+        /* Підзаголовок */
+        .about-subtitle {
+            text-align: center;
+            font-size: 19px;
+            font-weight: 600;
+            color: #b96513;
+
+            max-width: 750px;
+            margin: 0 auto 30px;
+        }
+
+        /* Заголовки розділів */
+        .about-card h3 {
+            color: #25364a;
+            font-size: 23px;
+            margin-top: 35px;
+            margin-bottom: 12px;
+
+            border-bottom: 2px solid #f0a340;
+            padding-bottom: 8px;
+        }
+
+        /* Основний текст */
+        .about-card p {
+            margin: 0 0 18px;
+        }
+
+        /* Список принципів */
+        .about-principles {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 25px;
+        }
+
+        .about-principles li {
+            background: #fff8ed;
+            border-left: 4px solid #f0a340;
+            border-radius: 8px;
+
+            padding: 12px 16px;
+            margin-bottom: 12px;
+        }
+
+        /* Цитата */
+        .about-quote {
+            margin: 35px 0 0;
+            padding: 24px;
+
+            background: #f4f6f8;
+            border-left: 5px solid #e99a32;
+            border-radius: 10px;
+
+            color: #455468;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* ===== АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ ===== */
+
+        @media (max-width: 600px) {
+            .about-us {
+                margin: 15px auto;
+                padding: 12px;
+            }
+
+            .about-card {
+                padding: 22px 18px;
+                border-radius: 14px;
+                font-size: 16px;
+            }
+
+            .about-card h1 {
+                font-size: 26px;
+            }
+
+            .about-subtitle {
+                font-size: 17px;
+            }
+
+            .about-card h3 {
+                font-size: 20px;
+                margin-top: 28px;
+            }
+
+            .about-quote {
+                padding: 18px;
+                font-size: 16px;
+            }
+        }
+
+        /* Стиль для  кнопки в навігації */
+        .link-header-btn {
+            background-color: transparent;
+            color: #0a0a0a !important;   /* Темний текст */
+            padding: 8px 16px;
+            border-radius: 20px;     
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        /* Ефект при наведенні курсору */
+        .link-header-btn:hover {
+            background-color: #88abf6; /* Трохи темніший при наведенні */
+            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+            transform: translateY(-1px);
+        }
+
+                
+        
+
+
+    
+    </style>  
+
+</head>
+
+
+
+
+<body>
+
+    <header>
+        
+        <nav>
+            <a href="index.html" class="link-header-btn">◀ На головну</a>
+                           
+            <a href="#contacts" class="link-header-btn">Контакти</a>
+             
+                
+        </nav>
+
+            
+
+    </header>
+
+
+    <main>
+
+        <section id="home" class="hero">
+
+            
+            
+
+        </section>    
+
+         
+    <div id="about-section" class="about-us">
+        <div class="about-card">
+           
+            
+            <h2>Про наш освітній простір 📚</h2>
+            <p class="about-subtitle">Ми допомагаємо батькам та всім бажаючим знаходити викладачів та інших фахівців без посередників</p>
+
+            <p>Наш освітній каталог створений для батьків, учнів і всіх, хто шукає викладача для додаткового навчання. Тут можна ознайомитися з анкетами репетиторів, дізнатися про їхню спеціалізацію та зв'язатися безпосередньо з обраним викладачем. Також можна залишити відгук про викладача, тим самим допомагаючи іншим батькам приймати обґрунтовані рішення.</p>
+
+            <h3>🚀 Як розвивається проєкт</h3>
+            <p>Ми поступово розширюємо каталог, додаємо нові напрями й працюємо над зручністю пошуку. У перспективі ми також плануємо розвивати персональні освітні сторінки викладачів з відеоуроками та авторськими методиками.</p>
+
+            <h3>⭐ Наші принципи</h3>
+            <ul class="about-principles">
+                <li>✔️ <strong>Прозорість:</strong> Зрозуміла інформація про викладачів та їхні послуги.</li>
+                <li>✔️ <strong>Прямий контакт:</strong> Можливість безпосередньо зателефонувати чи написати.</li>
+                <li>✔️ <strong>Доступність:</strong> Безкоштовне розміщення анкет у каталозі.</li>
+                <li>✔️ <strong>Розвиток:</strong> Поступове вдосконалення сайту з урахуванням потреб користувачів та викладачів.</li>
+            </ul>
+
+            <blockquote class="about-quote">
+                І так, ми молодий проєкт, ми створені в серпні 2026 року, але як сказав легендарний китайський філософ Лао-дзи (традиційно саме йому приписують ці слова):
+                «Подорож у тисячу миль починається з одного кроку»
+               
+            </blockquote>
+        </div>
+    </div>
+        
+
+
+
+     
+
+
+
+
+    </main>    
+
+
+
+
+    <footer id="contacts"> 
+        <h2>Каталог репетиторів та фахівців з розвитку дитини</h2>
+
+         
+        <p>
+            <a href="https://www.facebook.com/share/g/1CUDs6SgBU/"
+                target="_blank"
+                rel="noopener noreferrer">
+                📘Наш Facebook
+            </a>
+        </p>  
+
+        <p>
+            <a href="mailto:pavlenkoyurij@gmail.com" title="Написати нам">
+                📧E-mail
+            </a>
+        </p>
+
+        <p>
+            <a href="tel:+380957996024" title="Подзвонити нам">
+                📞Телефон: +380957996024
+            </a>
+        </p>
+
+            <p>📍Кривий Ріг, Україна</p>
+
+            <p>© Репетитори та фахівці з розвитку дитини 2026</p>
+
+            <p><small style="color: #ff8533;">Правила публікації матеріалів:</small></p>
+            <p><small style="color: #ff8533;">Ми поважаємо авторські права та права інших людей. Якщо будь-який матеріал на сайті порушує ваші права, <br>повідомте нас через контакти, і ми оперативно його перевіримо та, за потреби, виправимо або видалимо. T:+380957996024</small></p>
+
+
+
+    </footer>
+ 
+
+
+</body>
+</html>
