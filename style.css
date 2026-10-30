@@ -1007,6 +1007,36 @@ footer {
             }
         }
 
+          /*контейнер фаворитів ТОР 3*/
+        .favorites {
+            margin-top: 10px;
+            padding: 50px 20px;
+            text-align: center;
+            background-color: rgba(255,255,255,0.65);
+            backdrop-filter: blur(1px);
+    
+        }    
+    
+            /*--- контейнен(флекс-бокс) ---*/
+        .favorites-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+        }
+    
+        /* Однакова ширина карток у блоці favorites */
+        .favorites-container > .tutor-card,
+        .favorites-container > .tutor-card.premium {
+            flex: 0 1 300px;
+            width: 300px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+
 
 
 
