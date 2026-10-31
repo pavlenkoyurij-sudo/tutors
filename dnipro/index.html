@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--адаптація для мобільних пристроїв-->
+        <!--СЕО ОПИС - МЕГА ВАЖЛИВО-->
+    <meta name="description"
+    content="Каталог репетиторів шкільних предметів, а також психологів, логопедів і дефектологів Дніпра. Онлайн та офлайн заняття. Репетитори онлайн. Репетитор англійської мови в Дніпрі.">
+    
+    <title>Репетитори та фахівці з розвитку дитини - Дніпро</title>
+
+    <!--відсилка до стилів-->
+    <link rel="stylesheet" href="../style.css">
+    
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="canonical" href="https://pavlenkoyurij-sudo.github.io/tutors/dnipro/" />
+
+</head>
+
+
+
+
+<body>
+
+    <header>
+        <h2>Репетитори та фахівці з розвитку дитини - Дніпро</h2>
+        <nav>
+            <a href="about-us.html">Про нас</a>
+            <a href="#reviews-section">Відгуки</a>
+            <a href="#tutors">Викладачі</a>                
+            <a href="promo/promo.html" class="nav-btn-highlight">Стати фахівцем</a> 
+        </nav>
+            
+
+    </header>
+
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <h1>
+                🖋️ Знайдіть репетитора для вашої дитини: <br>онлайн чи офлайн
+            </h1>
+
+           
+
+            <a href="#tutors" class="hero-btn">
+                 Підібрати викладача🚀
+            </a>
+
+            
+
+        </section>    
+        
+
+
+
+
+        <section class="advantages-section">
+
+             <h2 class="advantages-title">
+                Переваги нашого каталогу
+            </h2>
+
+            <div class="advantages">
+                <div class="adv-card">
+                    <div class="adv-icon">📋</div>
+
+                    <p>
+                        ✔️ Прямий контакт із викладачем: <br>
+                            <small>
+                                Натисніть кнопку «Подзвонити» в анкеті репетитора — і ви зв'яжетеся з ним безпосередньо, без заповнення форм, посередників і прихованих комісій.
+                            </small>
+                    </p>
+
+                    <p>
+                        ✔️ Максимально комфортний користувацький інтерфейс: <br><small>Фільтри та зрозуміла структура дозволяють швидко підібрати фахівця за містом, предметом, вартістю та іншими критеріями для вашої зручності</small>
+                    </p>
+
+                    <p>
+                        ✔️ Можливість ознайомитися з відгуками: <br><small>Відгуки інших користувачів дозволяють краще оцінити досвід співпраці з викладачем і зробити зважений вибір.</small>
+                    </p>                    
+
+
+
+            </div>   
+ 
+        </section>
+
+
+       
+
+
+
+        <section id="tutors" class="tutors-section">
+            <h2>Наші спеціалісти</h2>
+            <div class="city-filter">
+
+                <input
+                    type="text"
+                    id="citySearch"
+                    placeholder="🔎 Введіть місто..."
+                    autocomplete="off"
+                    oninput="selectByCity()"
+                >
+
+                <div class="filters">
+                    <button onclick="selectAllCities()">Всі міста</button>
+                </div>    
+            </div>
+
+
+
+
+
+            <div class="filters">
+                <button onclick="filterTutors('all')">Всі</button>
+                <button onclick="filterTutors('ukrainian')">Українська мова</button>
+                <button onclick="filterTutors('ukrainianLiterature')">Українська література</button>
+                <button onclick="filterTutors('english')">Англійська мова</button>
+                <button onclick="filterTutors('german')">Німецька мова</button>
+                <button onclick="filterTutors('polish')">Польська мова</button>
+                <button onclick="filterTutors('french')">Французька мова</button>
+                <button onclick="filterTutors('mathematics')">Математика</button>
+                <button onclick="filterTutors('physics')">Фізика</button>
+                <button onclick="filterTutors('chemistry')">Хімія</button>
+                <button onclick="filterTutors('biology')">Біологія</button>
+                <button onclick="filterTutors('geography')">Географія</button>
+                <button onclick="filterTutors('history')">Історія</button>
+                <button onclick="filterTutors('informatics')">Інформатика</button>
+                <button onclick="filterTutors('painting')">Малювання</button>
+                <button onclick="filterTutors('music')">Музика</button>
+                <button onclick="filterTutors('others')">Інше</button>
+            </div>
+            
+            <div class="extra-services">
+                <button onclick="filterTutors('psychologist')">Послуги психолога</button>
+                <button onclick="filterTutors('speech-therapist')">Послуги логопеда</button>
+                <button onclick="filterTutors('defectologist')">Послуги дефектолога</button>
+            </div>
+
+
+
+            <div class="tutor-grid" id="tutorGrid"></div> <!--відсилка до масиву майстрів в ява скрипт-->
+
+
+        
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+        <section class="faq-section">
+            <h2>Часті запитання про послуги репетиторів та фахівців</h2>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Як зрозуміти, чи потрібен дитині репетитор?</h3>
+
+                <div class="faq-answer">
+                <p>Якщо дитині важко засвоїти окремі теми, вона регулярно отримує низькі оцінки або потребує додаткового пояснення матеріалу, додаткові заняття бужуть корисними. Іноді може бути достатньо кількох занять.</p>
+                </div>             
+            </div>
+
+
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Як обрати репетитора для дитини?</h3>
+                <div class="faq-answer"> <p>Зверніть увагу на досвід фахівця, опис послуг і формат занять. Перед початком навчання обговоріть цілі дитини та очікувані результати. Якщо репетитор пропонує пробне заняття, воно допоможе зрозуміти, чи підходить вам його підхід до навчання.</p>  
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Онлайн чи офлайн, що ефективніше?</h3>
+                <div class="faq-answer"> <p>Обидва формати можуть бути ефективними. Онлайн-заняття дозволяють навчатися дистанційно та заощаджувати час на дорогу. Офлайн-заняття передбачають особисту зустріч із фахівцем. Обирайте формат, який відповідає потребам дитини та вашим можливостям.</p>  
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Як зв'язатися з репетитором?</h3>
+
+                <div class="faq-answer">
+                <p>Натисніть кнопку "Подзвонити" в анкеті репетитора і ви одразу зможете зв'язатися з ним. Варто пам'ятати, що деякі репетитори можуть мати обмежений час на зв'язок, в таких випадках варто писати на месенджери.</p>   
+                </div>          
+            </div>
+
+            <div class="faq-item"> 
+                <h3 onclick="toggleFAQ(this)">Як додати свою анкету до каталогу Репетиторів та фахівців з розвитку дитини Дніпра?</h3>
+
+                <div class="faq-answer">
+                <p>Угорі нашої сторінки є кнопка "Стати фахівцем" - натискаємо її, заповнюємо всі поля і після перевірки адміністратором вашу анкету буде додано до Каталогу репетиторів та фахівців з розвитку дитини Дніпра. Якщо ваша основна форма роботи з учнем "онлайн", то ваша анкета буде відображена також і в інших містах каталогу.</p>    
+                </div>    
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Чи можна знайти репетитора потрібного міста?</h3>
+
+                <div class="faq-answer">
+                <p>Так, використовуйте фільтр міста, щоб переглянути доступних фахівців у вашому місті. Варто зазначити, що більшість репетиторів працюють також онлайн і можуть працювати з учнями незалежно від міста.</p>
+                </div>             
+            </div>
+            
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Чи можна знайти репетитора для підготовки до іспитів?</h3>
+
+                <div class="faq-answer">
+                <p>Так, варто звернути увагу на опис послуг кожного фахівця та уточнити чи проводить він підготовку до потрібного вам іспиту.</p>
+                </div>             
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Чи є в Каталозі фахівці не тільки з навчальних предметів?</h3>
+
+                <div class="faq-answer">
+                <p>Так, в каталозі можна знайти і інших фахівців, які допомагають у розвитку дитини, таких як логопеди, психологи та дефектологи.</p>
+                </div>             
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Скільки коштує послуга репетитора у Дніпрі?</h3>
+
+                <div class="faq-answer">
+                <p>Ціни на послуги репетитора у Дніпрі можуть відрізнятися залежно від предмета, рівня складності та досвіду фахівця. Зазвичай вони коливаються від 150 до 600 грн за годину.</p>
+                </div>             
+            </div>
+
+        </section>
+        
+
+        <nav class="subject-picker" aria-label="Предмети">
+            <h2>Популярні запити</h2>
+            <p class="subject-picker-hint"> Знайдіть репетитора за предметом</p>
+                <div class="subject-grid">                
+                    <a href="https://pavlenkoyurij-sudo.github.io/tutors/subject/english/index.html" class="link-subject-btn">Репетитори англійської мови</a>
+                    <a href="https://pavlenkoyurij-sudo.github.io/tutors/subject/ukrainian/index.html" class="link-subject-btn">Репетитори української мови та літератури</a>
+                    <a href="https://pavlenkoyurij-sudo.github.io/tutors/subject/math/index.html" class="link-subject-btn">Репетитори математики</a>
+                </div>
+        </nav>
+
+
+
+
+        
+
+
+        <section class="seo-text">
+            <h2>
+                Шукаєте репетитора в Дніпрі?
+            </h2>
+
+            <p>
+                Навчайтеся онлайн із викладачами з різних куточків України, не витрачаючи час на дорогу. Живете в Новокодацькому або Самарському районі чи в іншій частині міста? Для онлайн-занять достатньо зручного місця та доступу до інтернету.
+            </p>
+
+            <p>
+                Наш каталог також допоможе батькам і школярам ознайомитися з пропозиціями репетиторів у Дніпрі. Тут можна шукати викладачів для вивчення української мови та літератури, англійської, німецької, польської й французької мов, математики, фізики, хімії, біології, географії, історії України та інформатики. Також репетитори можуть допомагати систематизувати знання, розібрати складні теми та готуватися до НМТ. Конкретні напрями роботи залежать від спеціалізації кожного викладача.
+            </p>
+
+            <p>
+                Для дітей, яким потрібна додаткова підтримка в розвитку, у каталозі передбачені також анкети психологів, логопедів і дефектологів. Батьки можуть ознайомитися з інформацією про спеціалістів, дізнатися про їхні напрями роботи та вибрати відповідний варіант залежно від потреб дитини.
+            </p>
+
+        </section>
+
+
+
+        <section class="reviews-section" id="reviews-section">
+            <h2>💬 Відгуки наших користувачів</h2>
+            <p class="reviews-subtitle">
+                Ми слідкуємо за відгуками користувачів каталогу.
+            </p>
+
+            <div class="reviews-container">
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="review-autor">Оксана П. </span>
+                        <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+
+                    <p class="review-text">
+                        Дякуємо репетиторці, Олені (ENGLISH SPACE) за роботу з нашим сином! Йому 10 років, і раніше англійська здавалася нудним шкільним предметом. На заняттях усе змінилося: уроки проходять у формі гри, з цікавими завданнями та розмовною практикою, тож дитина займається із задоволенням і навіть сама нагадує про урок. Викладач уміє знайти підхід до дитини, терпляче пояснює, вчасно хвалить і підтримує. За короткий час помітний прогрес: збагатився словниковий запас, син став сміливіше говорити і з інтересом виконує домашні завдання. Щиро рекомендуємо! 💖
+                    </p>
+                    <span class="review-date">15.10.2026</span>
+
+                </div>
+
+               
+            </div>
+            <div class="review-action">
+                <a href="https://wa.me/380957996024?text=%D0%94%D0%BE%D0%B1%D1%80%D0%B8%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BB%D0%B8%D1%88%D0%B8%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B3%D1%83%D0%BA."
+                class="leave-review-btn">
+                ✍️ Залишити відгук через WhatsApp
+                </a>
+            </div>
+
+        </section>
+
+
+       
+
+
+
+
+        <section class="join-section" id="join-tutor-section">
+            <h2>Ви фахівець?</h2>
+
+            <p>
+                Якщо ви репетитор, психолог, логопед або дефектолог і бажаєте, щоб більше сімей дізналися про ваші послуги, зв'яжіться з нами!
+            </p>
+
+            <a href="promo/promo.html"
+                class="add-tutor-btn whatsapp-btn">
+                🖋️ Заповнити анкету фахівця
+            </a>
+
+
+
+            
+
+
+
+            <p>
+                Ми безкоштовно додамо ваше оголошення до каталогу.
+            </p>
+            
+
+            <p class="join-note">
+                ⏱️ Додавання анкети займає лише хвилину.
+            </p>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Інші міста:</h2>
+            <div>
+                <a href="../index.html" class="nav-btn-highlight">📍Запоріжжя</a>
+                <a href="../krivyi-rih/index.html" class="link-city-btn">📍Кривий Ріг</a>
+                <a href="../ternopil.html/" class="link-city-btn">📍Тернопіль</a>     
+            </div>            
+
+        </section>
+
+        <section class="favorites">
+            <h2>Рекомендуємо в Дніпрі</h2>
+               
+
+            <div class="favorites-container">
+        
+                    <!-- Єгор -->
+                <div class="tutor-card"
+                    data-category="english"
+                    data-tutor-id="10"
+                    onclick="openTutorModal(10)">
+
+                    <img src="images/default.jpeg"
+                        alt="Єгор">
+
+                    <div class="tutor-name-row">
+                        <h3>Єгор</h3>
+                    </div>
+
+                    <p>🖋️Англійська мова</p>
+
+                    <p class="tutor-description">
+                        Надаю послуги репетитора з англійської мови.  Навчаю дітей з 6 років та дорослих.  Освіта вища, досвід роботи понад 6 років.  Пишіть або дзвоніть 0661208697, 0993977303
+                    </p>
+
+                    <p>⭐Новий (0 відгуків)</p>
+                    <p>🏆8 років досвіду</p>
+                    <p>📚 Формат занять: 💻 Онлайн</p>
+                    <p>💰400 грн. - 60 хвилин для дітей, 500 грн - 60 хвилин для дорослих</p>
+                    <p class="tutor-city">📍Дніпро</p>
+
+                    <a class="call-btn"
+                    href="tel:+380661208697"
+                    onclick="event.stopPropagation()">
+                        📞Подзвонити
+                    </a>
+                </div>
+            
+             <!-- Олена -->
+                <div class="tutor-card"
+                    data-category="english"
+                    data-tutor-id="25"
+                    onclick="openTutorModal(25)">
+
+                    <img src="images/default.jpeg"
+                        alt="Олена">
+
+                    <div class="tutor-name-row">
+                        <h3>Олена</h3>
+                    </div>
+
+                    <p>🖋️Англійська мова</p>
+
+                    <p class="tutor-description">
+                        Я — репетитор англійської мови для дітей, який допомагає учням вивчати мову легко, цікаво та без страху помилок. У своїй роботі використовую сучасні методики навчання, орієнтовані на вік дитини, її характер і рівень знань.\n Створюю інтерактивні уроки, використовуючи різноманітні завдання, які допомагають учням краще засвоювати матеріал.
+                    </p>
+
+                    <p>⭐Новий (0 відгуків)</p>
+                    <p>🏆35 років досвіду</p>
+                    <p>📚 Формат занять: 💻 Онлайн</p>
+                    <p>💰350 за 60 хв</p>
+                    <p class="tutor-city">📍Дніпро</p>
+
+                    <a class="call-btn"
+                    href="tel:+380508435116"
+                    onclick="event.stopPropagation()">
+                        📞Подзвонити
+                    </a>
+                </div>
+
+                 <!-- Ольга -->
+                <div class="tutor-card"
+                    data-category="english"
+                    data-tutor-id="36"
+                    onclick="openTutorModal(36)">
+
+                    <img src="images/default.jpeg"
+                        alt="Ольга">
+
+                    <div class="tutor-name-row">
+                        <h3>Ольга</h3>
+                    </div>
+
+                    <p>🖋️Англійська мова</p>
+
+                    <p class="tutor-description">
+                        Telegram: @eng_olya    Індивідуальні та групові уроки для дітей, підлітків та дорослих. Як вчитель я маю 6 років досвіду викладання англійської. Також маю 3-х річний досвід роботи в англомовній компанії в Європі. Використовую сучасні методики та цікаві матеріали. Працюю на розвиток спілкування, граматики, лексики, письма. Пропоную гнучкий графік та індвидіально підібрану програму створену під Ваші запити.
+                    </p>
+
+                    <p>⭐Новий (0 відгуків)</p>
+                    <p>🏆6 років досвіду</p>
+                    <p>📚 Формат занять: 💻 Онлайн</p>
+                    <p>💰Індивідуальні заняття (всі рівні) : 45 хв - 350 грн, 1 година - 380 грн. Групові заняття, від 3-х людей (рівні В1 і вище) : 1 година - 300 грн</p>
+                    <p class="tutor-city">📍Дніпро</p>
+
+                    <a class="call-btn"
+                    href="tel:+380996232834"
+                    onclick="event.stopPropagation()">
+                        📞Подзвонити
+                    </a>
+                </div>
+
+             </div>
+        </section>
+
+        
+
+        
+
+    </main>    
+
+
+    
+    
+    
+
+    
+
+
+
+    <button id="scrollToTopBtn" aria-label="Наверх">
+            ▲
+        </button> <!--кнопка наверх-->
+
+
+
+
+
+
+    <footer id="contacts"> 
+        <h2>Каталог репетиторів та фахівців з розвитку дитини</h2>
+
+         
+        <p>
+            <a href="https://www.facebook.com/share/g/19W3eJeLfH/"
+                target="_blank"
+                rel="noopener noreferrer">
+                📘Наш Facebook
+            </a>
+        </p>  
+
+        <p>
+            <a href="mailto:yurij.webdev@gmail.com" title="Написати нам">
+                📧E-mail
+            </a>
+        </p>
+
+            <p>📍Дніпро, Україна</p>
+
+            <p>© Репетитори та фахівці з розвитку дитини 2026</p>
+
+            <p><small style="color: #ff8533;">Правила публікації матеріалів:</small></p>
+            <p><small style="color: #ff8533;">Ми поважаємо авторські права та права інших людей. Якщо будь-який матеріал на сайті порушує ваші права, <br>повідомте нас через контакти, і ми оперативно його перевіримо та, за потреби, виправимо або видалимо. T:+380957996024</small></p>
+
+
+
+    </footer>
+
+
+     <!-- Універсальне модальне вікно для детального опису -->
+    <dialog id="tutorModal" class="tutor-modal">
+        <div class="modal-content">
+            <button class="modal-close-icon" onclick="closeTutorModal()">&times;</button>
+            <img id="modalPhoto" src="" alt="" class="modal-photo">
+            <h3 id="modalName"></h3>
+            <p id="modalId" class="modal-id"></p>
+            <p id="modalProfession" class="modal-prof"></p>
+            <p id="modalExperience" class="modal-experience"></p>
+            <p id="modalCity" class="modal-city"></p>
+            <p id="modalFormat" class="modal-format"></p>
+            <p id="modalPrice" class="modal-price"></p>
+            <hr>
+            <h4>Повний опис послуг:</h4>
+            <p id="modalDescription" class="modal-desc"></p>
+            <hr>
+            <a id="modalCallBtn" href="" class="call-btn">📞 Подзвонити</a>
+        </div>
+    </dialog>
+
+        <!--посилання до супербази-->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <!--посилання до ява скрипта-->
+    <script src="../script.js"></script> 
+
+
+        
+
+
+</body>
+</html>
