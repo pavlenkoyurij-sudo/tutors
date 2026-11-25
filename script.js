@@ -1,4 +1,4 @@
-       // Функція для екранування, захист від XSS атак
+    // Функція для екранування, захист від XSS атак
        const esc = s => String(s ?? '').replace(/[&<>"']/g,
             c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
        
@@ -6,10 +6,16 @@
        const supabaseUrl = "https://kvnivreuwjgxqekaswed.supabase.co";
         const supabaseKey = "sb_publishable_lFliydUt3DSoAuntl79FdA_zHUVZpga";
 
-        const supabaseClient = window.supabase.createClient(
-            supabaseUrl,
-            supabaseKey
-        );
+        
+        let supabaseClient = null;
+        if (window.supabase) {
+            supabaseClient = window.supabase.createClient(
+                supabaseUrl,
+                supabaseKey
+            );
+        }
+
+
 
         let tutors = [];
         let selectedCategory = "all";
@@ -17,16 +23,47 @@
           
             
         async function loadTutors() {
-            const { data, error } = await supabaseClient
-                .from("tutors")
-                .select("*")
-                
-                .eq("approved", true);
-            if (error) {
-                console.error(error);
-               return;
+           
+
+            let data = null;
+            let error = null;
+
+            if (supabaseClient) {
+                const resuit = await supabaseClient
+                    .from("tutors")
+                    .select("*")
+                    .eq("approved", true);
+                data = resuit.data;
+                error = resuit.error;
+            } else {
+                error = "Бібліотека Supabase не завантажена. Використовується локальна резервна копія.";
             }
+
+
+
+
+
+            if (error) {
+                console.error("Супербаза НЕДОСТУПНА:", error);
+
+                // Використаємо локальну резервну копію
+                if (Array.isArray(window.backupTutors)) {
+                    tutors = [...window.backupTutors];
+                    console.log(
+                        "Завантажено локальну резервну копію Анкет:",
+                        tutors.length
+                    );
+                } else {
+                    console.error("Резервні анкети не знайдено");
+                    return;
+                }
+            } else {
+                // Якщо дані успішно отримані з Supabase, використовуємо їх
+            
             tutors = data;
+            }
+
+            
             //Функція сортування репетиторів по рейтингу
             tutors.sort((a, b) =>
                 (Number(!!b.isPremium) - Number(!!a.isPremium)) ||
@@ -58,7 +95,7 @@
 
             applyFilters();
         }
-
+            //функція застосування фільтрів
         function applyFilters() {
             document.querySelectorAll(".tutor-card").forEach(card => {
 
@@ -92,20 +129,6 @@
                 
 
 
-
-        
-
-         
-
-        //місцеве сховище дл фаворитів
-        let favorites = JSON.parse(
-            localStorage.getItem("favorites")
-        ) || [];
-
-
-        
-            
-
             
         const tutorGrid = document.getElementById("tutorGrid");
         const categoryNames = {
@@ -122,7 +145,7 @@
             "geography": "Географія",
             "history": "Історія",
             "informatics": "Інформатика",
-            "primary-school": "Початкові класи",  
+            "primary-school": "Початкові класи",
             "painting": "Малювання",
             "music": "Музика",
             "others": "Інше",
@@ -190,7 +213,7 @@
                         rel="noopener noreferrer"
                         href="${tutor.page}"
                         onclick="event.stopPropagation()">
-                        Детальніше:
+                        Деталі:
                          </a>
                         ` : ""}
                         
@@ -200,8 +223,10 @@
                 `; 
             });
 
-            renderFavorites();
+            
         }
+
+        
       
         
 
@@ -211,37 +236,7 @@
         
         
 
-                //Функція додавання та видалення репетитора з фаворитів
-        function toggleFavorite(event, tutorId) {
-            // Зупиняємо вспливання події, щоб не відкривалася модалка
-            event.stopPropagation();
-
-            tutorId = Number(tutorId);
-
-            if (favorites.includes(tutorId)) {
-                favorites = favorites.filter(id => id !== tutorId);
-            } else {
-                favorites.push(tutorId);
-            }
-
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            renderFavorites();
-        }
-
-
-        function renderFavorites() {
-            document.querySelectorAll(".favorite-btn").forEach(btn => {
-                const id = Number(btn.dataset.id);
-
-                if (favorites.includes(id)) {
-                    btn.textContent = "❤️ В обраному";
-                    btn.classList.add("active");
-                } else {
-                    btn.textContent = "⭐ В обране";
-                    btn.classList.remove("active");
-                }
-            });
-        }
+          
 
 
 
@@ -318,9 +313,11 @@
             //якщо поточна була відкрита - закриваємо її, якщо закрита - відкриваємо
             answer.classList.toggle('open');
         }
-                                
-                       
 
+        
+                                        
+                       
+        
 
 
                
