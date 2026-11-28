@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -6,10 +7,10 @@
         <!--СЕО ОПИС - МЕГА ВАЖЛИВО-->
     <meta name="description"
     content="Дізнайтеся про освітній каталог репетиторів та фахівців з розвитку дитини: наші принципи, можливості для учнів та викладачів та розвиток проекту ">
-    <link rel="canonical" href="https://pavlenkoyurij-sudo.github.io/tutors/about-us.html" />
+    
     <title>Репетитори та фахівці з розвитку дитини</title>
 
-   
+   <link rel="canonical" href="https://pavlenkoyurij-sudo.github.io/tutors/about-us.html" />
     
     <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -211,7 +212,7 @@
             }
         }
 
-         /* Стиль для  кнопки в навігації */
+        /* Стиль для  кнопки в навігації */
         .link-header-btn {
             background-color: transparent;
             color: #0a0a0a !important;   /* Темний текст */
@@ -229,6 +230,83 @@
             transform: translateY(-1px);
         }
 
+
+          /* секція вдячності */
+    .gratitude-section {
+        margin: 40px auto;
+        padding: 30px 20px;
+        max-width: 1100px;
+        background: #fff4e9;
+        border-radius: 20px;
+    }
+
+    .gratitude-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .gratitude-image {
+        flex: 0 1 280px;
+    }
+
+    .gratitude-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .gratitude-content {
+        flex: 1;
+        text-align: center;
+        color: #654532;
+    }
+
+    .gratitude-content h2 {
+        color: #a34d36;
+        margin-top: 0;
+    }
+
+    .gratitude-content h3 {
+        color: #9b5b35;
+    }
+
+    .gratitude-content p {
+        line-height: 1.6;
+    }
+
+    .gratitude-content button {
+        margin-top: 15px;
+        padding: 12px 22px;
+        border: none;
+        border-radius: 25px;
+        background: #1565c0;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .gratitude-content button:hover {
+        background: #1877f2;
+    }
+
+    @media (max-width: 650px) {
+        .gratitude-container {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .gratitude-image {
+            flex: none;
+            width: 190px;
+        }
+
+        .gratitude-content h2 {
+            font-size: 23px;
+        }
+    }
 
                 
         
@@ -273,7 +351,7 @@
         <div class="about-card">
            
             
-            <h1>Про наш освітній простір</h1>
+            <h1>Про наш освітній простір 📚</h1>
             <p class="about-subtitle">Ми допомагаємо батькам та всім бажаючим знаходити викладачів та інших фахівців без посередників</p>
 
             <p>Наш освітній каталог створений для батьків, учнів і всіх, хто шукає викладача для додаткового навчання. Тут можна ознайомитися з анкетами репетиторів, дізнатися про їхню спеціалізацію та зв'язатися безпосередньо з обраним викладачем. Також можна залишити відгук про викладача, тим самим допомагаючи іншим батькам приймати обґрунтовані рішення.</p>
@@ -297,7 +375,25 @@
         </div>
     </div>
         
-
+        <section class="gratitude-section">
+            <div class="gratitude-container">
+                <div class="gratitude-image">
+                    <img src="images/bunny-heart.png"
+                    alt="веселий зайчик з сердечком">
+                </div>
+                <div class="gratitude-content">
+                    <h2>❤️ Куточок вдячності</h2>
+                    <h3>Наш освітній простір росте звдяки вам!</h3>
+                    <p>Вітаємо всіх друзів нашого маленького освітнього простору!</p>
+                    <p>Якщо вам сподобався наш каталог і він став вам у пригоді, будемо вдячні за рекомендацію друзям, знайомим та колегам.</p>
+                    <p>Нехай якомога більше викладачів знайдуть своїх учнів, а учні - чудових наставників! ❤️</p>
+                    <button id="shareCatalogBtn" type="button">
+                    <span>🔗</span>Поділитися каталогом
+                </button>
+                </div>
+                
+            </div>
+        </section>
 
 
      
@@ -311,7 +407,7 @@
 
 
     <footer id="contacts"> 
-        <h2>Каталог репетиторів та фахівців з розвитку дитини</h2>
+        
 
          
         <p>
@@ -339,12 +435,36 @@
             <p>© Репетитори та фахівці з розвитку дитини 2026</p>
 
             <p><small style="color: #ff8533;">Правила публікації матеріалів:</small></p>
-            <p><small style="color: #ff8533;">Ми поважаємо авторські права та права інших людей. Якщо будь-який матеріал на сайті порушує ваші права, <br>повідомте нас через контакти, і ми оперативно його перевіримо та, за потреби, виправимо або видалимо. T:+380957996024</small></p>
+            <p><small style="color: #ff8533;">Ми поважаємо авторські права та права інших людей. Якщо будь-який матеріал на сайті порушує ваші права, <br>повідомте нас через контакти, і ми оперативно його перевіримо та, за потреби, виправимо або видалимо.</small></p>
 
 
 
     </footer>
- 
+    <script>
+        //посилання блоку вдячності
+        const shareButton = document.getElementById("shareCatalogBtn");
+
+        shareButton.addEventListener("click", async () => {
+            const shareData = {
+                title: "Каталог репетиторів онлайн/офлайн",
+                text: "Перегляньте каталог репетиторів",
+                url: 'https://pavlenkoyurij-sudo.github.io/tutors/'
+            };
+        
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    await navigator.clipboard.writeText(shareData.url);
+                    alert("Посилання скопійовано!");
+                }
+            } catch (error) {
+                if (error.name !== 'AbortError') {
+                    console.error("Помилка при спробі поділитися:", error);
+                }                            
+            }
+        }); 
+    </script>
 
 
 </body>
