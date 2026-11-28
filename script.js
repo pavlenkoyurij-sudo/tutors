@@ -315,7 +315,29 @@
         }
 
         
-                                        
+         //посилання блоку вдячності
+        const shareButton = document.getElementById("shareCatalogBtn");
+
+        shareButton.addEventListener("click", async () => {
+            const shareData = {
+                title: "Каталог репетиторів онлайн/офлайн",
+                text: "Перегляньте каталог репетиторів",
+                url: 'https://pavlenkoyurij-sudo.github.io/tutors/'
+            };
+        
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    await navigator.clipboard.writeText(shareData.url);
+                    alert("Посилання скопійовано!");
+                }
+            } catch (error) {
+                if (error.name !== 'AbortError') {
+                    console.error("Помилка при спробі поділитися:", error);
+                }                            
+            }
+        });                                
                        
         
 
